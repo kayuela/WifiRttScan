@@ -1,0 +1,103 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3 Copyright 2018 The Android Open Source Project
+4
+5 Licensed under the Apache License, Version 2.0 (the "License");
+6 you may not use this file except in compliance with the License.
+7 You may obtain a copy of the License at
+8
+9     http://www.apache.org/licenses/LICENSE-2.0
+10
+11 Unless required by applicable law or agreed to in writing, software
+12 distributed under the License is distributed on an "AS IS" BASIS,
+13 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+14 See the License for the specific language governing permissions and
+15 limitations under the License.
+16-->
+17<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+18    package="com.example.android.wifirttscan"
+19    android:versionCode="1"
+20    android:versionName="1.0" >
+21
+22    <uses-sdk
+23        android:minSdkVersion="28"
+23-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
+24        android:targetSdkVersion="28" />
+24-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
+25
+26    <uses-feature android:name="android.hardware.wifi.rtt" />
+26-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:22:5-62
+26-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:22:19-59
+27
+28    <!-- Permissions required for Wifi RTT. -->
+29    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+29-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:25:5-79
+29-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:25:22-76
+30    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+30-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:26:5-76
+30-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:26:22-73
+31    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+31-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:27:5-76
+31-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:27:22-73
+32
+33    <application
+33-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:29:5-62:19
+34        android:allowBackup="true"
+34-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:30:9-35
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.0.0-beta01] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\11dac054a246fa39050c80d4040cc88a\core-1.0.0-beta01\AndroidManifest.xml:22:18-86
+36        android:debuggable="true"
+37        android:icon="@mipmap/ic_launcher"
+37-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:31:9-43
+38        android:label="@string/app_name"
+38-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:32:9-41
+39        android:roundIcon="@mipmap/ic_launcher_round"
+39-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:33:9-54
+40        android:supportsRtl="true"
+40-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:34:9-35
+41        android:theme="@style/CustomAppTheme" >
+41-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:35:9-46
+42        <activity
+42-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:39:9-48:20
+43            android:name="com.example.android.wifirttscan.MainActivity"
+43-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:40:13-41
+44            android:label="@string/app_name"
+44-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:41:13-45
+45            android:theme="@style/CustomAppTheme" >
+45-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:42:13-50
+46            <intent-filter>
+46-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:43:13-47:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:44:17-69
+47-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:44:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:46:17-77
+49-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:46:27-74
+50            </intent-filter>
+51        </activity>
+52        <activity
+52-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:50:9-55:20
+53            android:name="com.example.android.wifirttscan.LocationPermissionRequestActivity"
+53-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:51:13-62
+54            android:label="@string/title_activity_location_permission_request"
+54-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:52:13-79
+55            android:parentActivityName="com.example.android.wifirttscan.MainActivity"
+55-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:53:13-55
+56            android:theme="@style/CustomAppTheme" >
+56-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:54:13-50
+57        </activity>
+58        <activity
+58-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:57:9-61:20
+59            android:name="com.example.android.wifirttscan.AccessPointRangingResultsActivity"
+59-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:57:19-68
+60            android:label="@string/title_activity_access_point_ranging_results"
+60-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:58:13-80
+61            android:parentActivityName="com.example.android.wifirttscan.MainActivity"
+61-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:59:13-55
+62            android:theme="@style/CustomAppTheme" >
+62-->C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:60:13-50
+63        </activity>
+64    </application>
+65
+66</manifest>
