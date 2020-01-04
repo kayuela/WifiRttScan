@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ffran\\Dropbox\\TFG\\App\\connectivity-samples\\WifiRttScan\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "C:\\Users\\ffran\\Documents\\WifiRttScan\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ffran\\.gradle\\caches\\transforms-2\\files-2.1\\717dd50903df0f54f313409274e15d7f\\material-1.0.0-beta01\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
@@ -23,14 +23,31 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ffran\\Dropbox\\TFG\\App\\connectivity-samples\\WifiRttScan\\Application\\src\\main\\res\\values-sw600dp\\template-styles.xml",
+                    "source": "C:\\Users\\ffran\\Documents\\WifiRttScan\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
+                    "from": {
+                        "startLines": "20,21",
+                        "startColumns": "4,4",
+                        "startOffsets": "676,745",
+                        "endColumns": "67,67",
+                        "endOffsets": "739,808"
+                    },
+                    "to": {
+                        "startLines": "19,20",
+                        "startColumns": "4,4",
+                        "startOffsets": "1173,1241",
+                        "endColumns": "67,67",
+                        "endOffsets": "1236,1304"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ffran\\Documents\\WifiRttScan\\Application\\src\\main\\res\\values-sw600dp\\template-styles.xml",
                     "from": {
                         "startLines": "18",
                         "startColumns": "4",
-                        "startOffsets": "621",
+                        "startOffsets": "639",
                         "endLines": "22",
                         "endColumns": "12",
-                        "endOffsets": "861"
+                        "endOffsets": "883"
                     },
                     "to": {
                         "startLines": "26",
@@ -39,23 +56,6 @@
                         "endLines": "30",
                         "endColumns": "12",
                         "endOffsets": "1784"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ffran\\Dropbox\\TFG\\App\\connectivity-samples\\WifiRttScan\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
-                    "from": {
-                        "startLines": "20,21",
-                        "startColumns": "4,4",
-                        "startOffsets": "656,724",
-                        "endColumns": "67,67",
-                        "endOffsets": "719,787"
-                    },
-                    "to": {
-                        "startLines": "19,20",
-                        "startColumns": "4,4",
-                        "startOffsets": "1173,1241",
-                        "endColumns": "67,67",
-                        "endOffsets": "1236,1304"
                     }
                 },
                 {

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ffran\\Dropbox\\TFG\\App\\connectivity-samples\\WifiRttScan\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
+            "outputFile": "C:\\Users\\ffran\\Documents\\WifiRttScan\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ffran\\.gradle\\caches\\transforms-2\\files-2.1\\717dd50903df0f54f313409274e15d7f\\material-1.0.0-beta01\\res\\values-large-v4\\values-large-v4.xml",

@@ -19,6 +19,8 @@ import static com.example.android.wifirttscan.AccessPointRangingResultsActivity.
 
 import android.Manifest.permission;
 import android.annotation.SuppressLint;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.le.ScanRecord;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -63,6 +65,12 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
 
     private MyAdapter mAdapter;
 
+    public static class ScanResultComp extends ScanResult {
+        public ScanResultComp() {
+            super();
+        }
+    }
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -154,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
             }
             return newList;
         }
+
 
         // This is checked via mLocationPermissionApproved boolean
         @SuppressLint("MissingPermission")

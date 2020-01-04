@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\ffran\\Dropbox\\TFG\\App\\connectivity-samples\\WifiRttScan\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "C:\\Users\\ffran\\Documents\\WifiRttScan\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\ffran\\Documents\\WifiRttScan\\Application\\src\\main\\res\\values-v21\\base-template-styles.xml",
+                    "from": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "697",
+                        "endLines": "21",
+                        "endColumns": "12",
+                        "endOffsets": "774"
+                    },
+                    "to": {
+                        "startLines": "295",
+                        "startColumns": "4",
+                        "startOffsets": "21195",
+                        "endLines": "296",
+                        "endColumns": "12",
+                        "endOffsets": "21271"
+                    }
+                },
                 {
                     "source": "C:\\Users\\ffran\\.gradle\\caches\\transforms-2\\files-2.1\\11dac054a246fa39050c80d4040cc88a\\core-1.0.0-beta01\\res\\values-v21\\values-v21.xml",
                     "from": {
@@ -20,25 +39,6 @@
                         "endLines": "2,3,4,5,263,264,265,266,299,304",
                         "endColumns": "103,63,66,63,115,125,125,127,12,12",
                         "endOffsets": "154,218,285,349,19373,19499,19625,19753,21443,21781"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ffran\\Dropbox\\TFG\\App\\connectivity-samples\\WifiRttScan\\Application\\src\\main\\res\\values-v21\\base-template-styles.xml",
-                    "from": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "677",
-                        "endLines": "21",
-                        "endColumns": "12",
-                        "endOffsets": "753"
-                    },
-                    "to": {
-                        "startLines": "295",
-                        "startColumns": "4",
-                        "startOffsets": "21195",
-                        "endLines": "296",
-                        "endColumns": "12",
-                        "endOffsets": "21271"
                     }
                 },
                 {

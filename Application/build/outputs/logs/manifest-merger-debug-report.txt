@@ -1,8 +1,8 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:17:1-63:12
-INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:17:1-63:12
-INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:17:1-63:12
+ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:17:1-61:12
+INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:17:1-61:12
+INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:17:1-61:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-alpha1] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\0d959ec2b1d76b370de6af1012871b0d\constraintlayout-2.0.0-alpha1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.0.0-beta01] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\717dd50903df0f54f313409274e15d7f\material-1.0.0-beta01\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.0.0-beta01] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\2ff3a8ae1b644dbbda35fe1cc0eff9c0\appcompat-1.0.0-beta01\AndroidManifest.xml:17:1-22:12
@@ -33,38 +33,38 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0-beta01] C:\Users\ffran\.
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0-beta01] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\1b7ca4594c8237301f4f67658dbc1951\lifecycle-viewmodel-2.0.0-beta01\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-beta01] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\d545de961ef1717c3ffc8f2b62eb4822\lifecycle-livedata-core-2.0.0-beta01\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0-beta01] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\6da69d6de3d64be12411665a04b8c64d\core-runtime-2.0.0-beta01\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:17:1-63:12
-INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:17:1-63:12
+INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:17:1-61:12
+INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:17:1-61:12
 	package
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:18:5-46
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:18:5-46
 	android:versionName
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:20:5-30
-		INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:20:5-30
+		INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:17:11-69
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:17:11-69
 	android:versionCode
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:19:5-28
-		INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:19:5-28
+		INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
 uses-feature#android.hardware.wifi.rtt
-ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:22:5-62
+ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:22:5-62
 	android:name
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:22:19-59
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:22:19-59
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:25:5-79
+ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:25:5-79
 	android:name
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:25:22-76
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:25:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:26:5-76
+ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:26:5-76
 	android:name
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:26:22-73
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:26:22-73
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:27:5-76
+ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:27:5-76
 	android:name
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:27:22-73
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:27:22-73
 application
-ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:29:5-62:19
+ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:29:5-60:19
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-alpha1] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\0d959ec2b1d76b370de6af1012871b0d\constraintlayout-2.0.0-alpha1\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-alpha1] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\0d959ec2b1d76b370de6af1012871b0d\constraintlayout-2.0.0-alpha1\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.0.0-beta01] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\717dd50903df0f54f313409274e15d7f\material-1.0.0-beta01\AndroidManifest.xml:22:5-20
@@ -76,59 +76,59 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-beta01] C:\U
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.0.0-beta01] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\11dac054a246fa39050c80d4040cc88a\core-1.0.0-beta01\AndroidManifest.xml:22:18-86
 	android:supportsRtl
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:34:9-35
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:34:9-35
 	android:label
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:32:9-41
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:32:9-41
 	android:roundIcon
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:33:9-54
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:33:9-54
 	android:icon
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:31:9-43
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:31:9-43
 	android:allowBackup
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:30:9-35
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:30:9-35
 	android:theme
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:35:9-46
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:35:9-46
 activity#com.example.android.wifirttscan.MainActivity
-ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:39:9-48:20
+ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:37:9-46:20
 	android:label
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:41:13-45
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:39:13-45
 	android:theme
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:42:13-50
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:40:13-50
 	android:name
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:40:13-41
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:38:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:43:13-47:29
+ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:41:13-45:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:44:17-69
+ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:42:17-69
 	android:name
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:44:25-66
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:42:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:46:17-77
+ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:44:17-77
 	android:name
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:46:27-74
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:44:27-74
 activity#com.example.android.wifirttscan.LocationPermissionRequestActivity
-ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:50:9-55:20
+ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:48:9-53:20
 	android:parentActivityName
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:53:13-55
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:51:13-55
 	android:label
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:52:13-79
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:50:13-79
 	android:theme
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:54:13-50
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:52:13-50
 	android:name
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:51:13-62
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:49:13-62
 activity#com.example.android.wifirttscan.AccessPointRangingResultsActivity
-ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:57:9-61:20
+ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:55:9-59:20
 	android:parentActivityName
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:59:13-55
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:57:13-55
 	android:label
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:58:13-80
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:56:13-80
 	android:theme
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:60:13-50
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:58:13-50
 	android:name
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml:57:19-68
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:55:19-68
 uses-sdk
-INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
-INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-alpha1] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\0d959ec2b1d76b370de6af1012871b0d\constraintlayout-2.0.0-alpha1\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-alpha1] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\0d959ec2b1d76b370de6af1012871b0d\constraintlayout-2.0.0-alpha1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.material:material:1.0.0-beta01] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\717dd50903df0f54f313409274e15d7f\material-1.0.0-beta01\AndroidManifest.xml:20:5-44
@@ -189,13 +189,13 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-beta01] C:\Users\f
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-beta01] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\d545de961ef1717c3ffc8f2b62eb4822\lifecycle-livedata-core-2.0.0-beta01\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0-beta01] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\6da69d6de3d64be12411665a04b8c64d\core-runtime-2.0.0-beta01\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0-beta01] C:\Users\ffran\.gradle\caches\transforms-2\files-2.1\6da69d6de3d64be12411665a04b8c64d\core-runtime-2.0.0-beta01\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
-INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\ffran\Dropbox\TFG\App\connectivity-samples\WifiRttScan\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml
