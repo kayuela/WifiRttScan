@@ -19,7 +19,6 @@ import android.Manifest.permission;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.wifi.ScanResult;
 import android.net.wifi.rtt.RangingRequest;
 import android.net.wifi.rtt.RangingResult;
 import android.net.wifi.rtt.RangingResultCallback;
@@ -68,7 +67,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private EditText mMillisecondsDelayBeforeNewRangingRequestEditText;
 
     // Non UI variables.
-    private ScanResult mScanResult;
+    private ScanResultComp mScanResultComp;
     private String mMAC;
 
     private int mNumberOfRangeRequests;
@@ -127,16 +126,16 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
         // Retrieve ScanResult from Intent.
         Intent intent = getIntent();
-        mScanResult = intent.getParcelableExtra(SCAN_RESULT_EXTRA);
+        mScanResultComp = intent.getParcelableExtra(SCAN_RESULT_EXTRA);
 
-        if (mScanResult == null) {
+        if (mScanResultComp == null) {
             finish();
         }
 
-        mMAC = mScanResult.BSSID;
+        mMAC = mScanResultComp.getBSSID();
 
-        mSsidTextView.setText(mScanResult.SSID);
-        mBssidTextView.setText(mScanResult.BSSID);
+        mSsidTextView.setText(mScanResultComp.getSSID());
+        mBssidTextView.setText(mScanResultComp.getBSSID());
 
         mWifiRttManager = (WifiRttManager) getSystemService(Context.WIFI_RTT_RANGING_SERVICE);
         mRttRangingResultCallback = new RttRangingResultCallback();
@@ -180,7 +179,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mNumberOfRangeRequests++;
 
         RangingRequest rangingRequest =
-                new RangingRequest.Builder().addAccessPoint(mScanResult).build();
+                new RangingRequest.Builder().addAccessPoint(mScanResultComp.getScanResult()).build();
 
         mWifiRttManager.startRanging(
                 rangingRequest, getApplication().getMainExecutor(), mRttRangingResultCallback);

@@ -37,9 +37,9 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     private static ScanResultClickListener sScanResultClickListener;
 
-    private List<ScanResult> mWifiAccessPointsWithRtt;
+    private List<ScanResultComp> mWifiAccessPointsWithRtt;
 
-    public MyAdapter(List<ScanResult> list, ScanResultClickListener scanResultClickListener) {
+    public MyAdapter(List<ScanResultComp> list, ScanResultClickListener scanResultClickListener) {
         mWifiAccessPointsWithRtt = list;
         sScanResultClickListener = scanResultClickListener;
     }
@@ -67,7 +67,7 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
         }
     }
 
-    public void swapData(List<ScanResult> list) {
+    public void swapData(List<ScanResultComp> list) {
 
         // Always clear with any update, as even an empty list means no WifiRtt devices were found.
         mWifiAccessPointsWithRtt.clear();
@@ -110,10 +110,10 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
 
         } else if (viewHolder instanceof ViewHolderItem) {
             ViewHolderItem viewHolderItem = (ViewHolderItem) viewHolder;
-            ScanResult currentScanResult = getItem(position);
+            ScanResultComp currentScanResult = getItem(position);
 
-            viewHolderItem.mSsidTextView.setText(currentScanResult.SSID);
-            viewHolderItem.mBssidTextView.setText(currentScanResult.BSSID);
+            viewHolderItem.mSsidTextView.setText(currentScanResult.getSSID());
+            viewHolderItem.mBssidTextView.setText(currentScanResult.getBSSID());
 
         } else {
             throw new RuntimeException(viewHolder + " isn't a valid view holder.");
@@ -124,7 +124,7 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
      * Because we added a header item to the list, we need to decrement the position by one to get
      * the proper place in the list.
      */
-    private ScanResult getItem(int position) {
+    private ScanResultComp getItem(int position) {
         return mWifiAccessPointsWithRtt.get(position - 1);
     }
 
@@ -146,6 +146,6 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
     // Used to inform the class containing the RecyclerView that one of the ScanResult items in the
     // list was clicked.
     public interface ScanResultClickListener {
-        void onScanResultItemClick(ScanResult scanResult);
+        void onScanResultItemClick(ScanResultComp scanResult);
     }
 }

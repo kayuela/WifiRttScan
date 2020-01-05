@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
 
     private boolean mLocationPermissionApproved = false;
 
-    List<ScanResult> mAccessPointsSupporting80211mc;
+    List<ScanResultComp> mAccessPointsSupporting80211mc;
 
     private WifiManager mWifiManager;
     private WifiScanReceiver mWifiScanReceiver;
@@ -64,12 +64,6 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
     private RecyclerView mRecyclerView;
 
     private MyAdapter mAdapter;
-
-    public static class ScanResultComp extends ScanResult {
-        public ScanResultComp() {
-            super();
-        }
-    }
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,11 +118,11 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
     }
 
     @Override
-    public void onScanResultItemClick(ScanResult scanResult) {
-        Log.d(TAG, "onScanResultItemClick(): ssid: " + scanResult.SSID);
+    public void onScanResultItemClick(ScanResultComp scanResultComp) {
+        Log.d(TAG, "onScanResultItemClick(): ssid: " + scanResultComp.getSSID());
 
         Intent intent = new Intent(this, AccessPointRangingResultsActivity.class);
-        intent.putExtra(SCAN_RESULT_EXTRA, scanResult);
+        intent.putExtra(SCAN_RESULT_EXTRA, scanResultComp);
         startActivity(intent);
     }
 
@@ -146,14 +140,14 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
 
     private class WifiScanReceiver extends BroadcastReceiver {
 
-        private List<ScanResult> find80211mcSupportedAccessPoints(
+        private List<ScanResultComp> find80211mcSupportedAccessPoints(
                 @NonNull List<ScanResult> originalList) {
-            List<ScanResult> newList = new ArrayList<>();
+            List<ScanResultComp> newList = new ArrayList<>();
 
             for (ScanResult scanResult : originalList) {
 
                 if (scanResult.is80211mcResponder()) {
-                    newList.add(scanResult);
+                    newList.add(new ScanResultComp(scanResult));
                 }
 
                 if (newList.size() >= RangingRequest.getMaxPeers()) {
