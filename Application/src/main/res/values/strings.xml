@@ -22,6 +22,10 @@
 
     <string name="recycler_row_header_label_ssid">SSID</string>
     <string name="recycler_row_header_label_bssid">BSSID</string>
+    <string name="recycler_row_header_label_compatibility_announced">Compatibility Announced</string>
+    <string name="recycler_row_header_label_compatibility_proved">Compatibility Proved</string>
+
+
     <string name="retrieving_access_points">Retrieving Access Points&#8230;</string>
     <string name="scan_wifi_button_label">Scan WiFi</string>
     <string name="introduction_text">Click the button below to scan access points.</string>
@@ -43,5 +47,6 @@
     <string name="reset_label_activity_access_point_ranging_results">Reset Ranging Requests</string>
     <string name="number_of_requests_label_activity_access_point_ranging_results">Number of requests:</string>
     <string name="mac_mismatch_message_activity_access_point_ranging_results">Callback MAC address doesn\'t match original request MAC address.</string>
+    <string name="textview">TextView</string>
 
 </resources>

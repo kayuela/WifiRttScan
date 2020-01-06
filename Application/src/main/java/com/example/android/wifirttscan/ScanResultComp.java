@@ -42,7 +42,7 @@ class ScanResultComp implements Parcelable {
     }
 
     /* Métodos utilizados para comprobar si se anuncia y si realmente son compatibles con 802.11mc */
-    public boolean ismIs80211mcResponder() { return mIs80211mcResponder; }
+    public boolean isIs80211mcResponder() { return mIs80211mcResponder; }
 
     public void is80211mcResponder(boolean isResponder){
         mIs80211mcResponder=isResponder;

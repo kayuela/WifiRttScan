@@ -34,11 +34,30 @@
         android:id="@+id/ssid_text_view"/>
 
     <TextView
+        android:id="@+id/bssid_text_view"
         android:layout_width="0dp"
+        android:layout_height="147dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:textSize="@dimen/recycler_row_item_text_size" />
+
+    <TextView
+        android:id="@+id/compatibility_announced_text_view"
+        android:layout_width="166dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center_vertical"
         android:textAlignment="center"
-        android:textSize="@dimen/recycler_row_item_text_size"
-        android:id="@+id/bssid_text_view"/>
+        android:textSize="@dimen/recycler_row_item_text_size" />
+
+    <TextView
+        android:id="@+id/compatibility_proved_text_view"
+        android:layout_width="159dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="@dimen/recycler_row_item_text_size" />
 </LinearLayout>
