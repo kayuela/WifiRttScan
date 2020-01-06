@@ -5,14 +5,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 class ScanResultComp implements Parcelable {
-    private ScanResult scanResult;
+    private ScanResult mScanResult;
 
     public ScanResultComp(ScanResult scanResult) {
-        this.scanResult = scanResult;
+        this.mScanResult = scanResult;
     }
 
     protected ScanResultComp(Parcel in) {
-        scanResult = in.readParcelable(ScanResult.class.getClassLoader());
+        mScanResult = in.readParcelable(ScanResult.class.getClassLoader());
     }
 
     public static final Creator<ScanResultComp> CREATOR = new Creator<ScanResultComp>() {
@@ -28,15 +28,15 @@ class ScanResultComp implements Parcelable {
     };
 
     public String getSSID() {
-        return scanResult.SSID;
+        return mScanResult.SSID;
     }
 
     public String getBSSID() {
-        return scanResult.BSSID;
+        return mScanResult.BSSID;
     }
 
     public ScanResult getScanResult() {
-        return scanResult;
+        return mScanResult;
     }
 
     @Override
@@ -46,6 +46,6 @@ class ScanResultComp implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeParcelable(scanResult, flags);
+        dest.writeParcelable(mScanResult, flags);
     }
 }
