@@ -6,9 +6,11 @@ import android.os.Parcelable;
 
 class ScanResultComp implements Parcelable {
     private ScanResult mScanResult;
+    private boolean mIs80211mcResponder;
 
     public ScanResultComp(ScanResult scanResult) {
         this.mScanResult = scanResult;
+        this.mIs80211mcResponder = true;
     }
 
     protected ScanResultComp(Parcel in) {
@@ -37,6 +39,17 @@ class ScanResultComp implements Parcelable {
 
     public ScanResult getScanResult() {
         return mScanResult;
+    }
+
+    /* Métodos utilizados para comprobar si se anuncia y si realmente son compatibles con 802.11mc */
+    public boolean ismIs80211mcResponder() { return mIs80211mcResponder; }
+
+    public void is80211mcResponder(boolean isResponder){
+        mIs80211mcResponder=isResponder;
+    }
+
+    public boolean is80211mcResponderAnnounced() {
+        return mScanResult.is80211mcResponder();
     }
 
     @Override
