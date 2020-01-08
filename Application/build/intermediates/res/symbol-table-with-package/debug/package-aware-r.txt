@@ -1169,8 +1169,6 @@ id clip_vertical
 id collapseActionView
 id comp_announced_text_view
 id comp_proved_text_view
-id compatibility_announced_text_view
-id compatibility_proved_text_view
 id container
 id content
 id contentPanel
@@ -1363,6 +1361,8 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toggleButton
+id toggleButton2
 id top
 id topPanel
 id touch_outside

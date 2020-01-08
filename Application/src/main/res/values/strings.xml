@@ -22,8 +22,8 @@
 
     <string name="recycler_row_header_label_ssid">SSID</string>
     <string name="recycler_row_header_label_bssid">BSSID</string>
-    <string name="recycler_row_header_label_compatibility_announced">Compatibility Announced</string>
-    <string name="recycler_row_header_label_compatibility_proved">Compatibility Proved</string>
+    <string name="recycler_row_header_label_compatibility_announced">Comp. Announced</string>
+    <string name="recycler_row_header_label_compatibility_proved">Comp. Proved</string>
 
 
     <string name="retrieving_access_points">Retrieving Access Points&#8230;</string>

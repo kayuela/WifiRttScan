@@ -14,50 +14,49 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:paddingTop="@dimen/recycler_row_padding"
-    android:paddingBottom="@dimen/recycler_row_padding"
+    android:clickable="true"
     android:orientation="horizontal"
-    android:clickable="true">
+    android:paddingTop="@dimen/recycler_row_padding"
+    android:paddingBottom="@dimen/recycler_row_padding">
 
     <TextView
-        android:layout_width="0dp"
+        android:id="@+id/ssid_text_view"
+        android:layout_width="70dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center_vertical"
         android:textAlignment="center"
-        android:textSize="@dimen/recycler_row_item_text_size"
-        android:id="@+id/ssid_text_view"/>
+        android:textSize="@dimen/recycler_row_item_text_size" />
 
     <TextView
         android:id="@+id/bssid_text_view"
-        android:layout_width="0dp"
-        android:layout_height="147dp"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:textAlignment="center"
-        android:textSize="@dimen/recycler_row_item_text_size" />
-
-    <TextView
-        android:id="@+id/compatibility_announced_text_view"
-        android:layout_width="166dp"
+        android:layout_width="70dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center_vertical"
         android:textAlignment="center"
         android:textSize="@dimen/recycler_row_item_text_size" />
 
-    <TextView
-        android:id="@+id/compatibility_proved_text_view"
-        android:layout_width="159dp"
-        android:layout_height="match_parent"
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="@dimen/recycler_row_item_text_size" />
+        android:text="TBannounced"
+        android:textOff="NO"
+        android:textOn="YES" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TBproved"
+        android:textOff="NO"
+        android:textOn="YES" />
+
 </LinearLayout>

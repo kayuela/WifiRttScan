@@ -55,49 +55,50 @@
 39-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:33:9-54
 40        android:supportsRtl="true"
 40-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:34:9-35
-41        android:theme="@style/CustomAppTheme" >
-41-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:35:9-46
-42        <activity
-42-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:37:9-46:20
-43            android:name="com.example.android.wifirttscan.MainActivity"
-43-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:38:13-41
-44            android:label="@string/app_name"
-44-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:39:13-45
-45            android:theme="@style/CustomAppTheme" >
-45-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:40:13-50
-46            <intent-filter>
-46-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:41:13-45:29
-47                <action android:name="android.intent.action.MAIN" />
-47-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:42:17-69
-47-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:42:25-66
-48
-49                <category android:name="android.intent.category.LAUNCHER" />
-49-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:44:17-77
-49-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:44:27-74
-50            </intent-filter>
-51        </activity>
-52        <activity
-52-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:48:9-53:20
-53            android:name="com.example.android.wifirttscan.LocationPermissionRequestActivity"
-53-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:49:13-62
-54            android:label="@string/title_activity_location_permission_request"
-54-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:50:13-79
-55            android:parentActivityName="com.example.android.wifirttscan.MainActivity"
-55-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:51:13-55
-56            android:theme="@style/CustomAppTheme" >
-56-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:52:13-50
-57        </activity>
-58        <activity
-58-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:55:9-59:20
-59            android:name="com.example.android.wifirttscan.AccessPointRangingResultsActivity"
-59-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:55:19-68
-60            android:label="@string/title_activity_access_point_ranging_results"
-60-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:56:13-80
-61            android:parentActivityName="com.example.android.wifirttscan.MainActivity"
-61-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:57:13-55
-62            android:theme="@style/CustomAppTheme" >
-62-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:58:13-50
-63        </activity>
-64    </application>
-65
-66</manifest>
+41        android:testOnly="true"
+42        android:theme="@style/CustomAppTheme" >
+42-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:35:9-46
+43        <activity
+43-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:37:9-46:20
+44            android:name="com.example.android.wifirttscan.MainActivity"
+44-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:38:13-41
+45            android:label="@string/app_name"
+45-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:39:13-45
+46            android:theme="@style/CustomAppTheme" >
+46-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:40:13-50
+47            <intent-filter>
+47-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:41:13-45:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:42:17-69
+48-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:42:25-66
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:44:17-77
+50-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:44:27-74
+51            </intent-filter>
+52        </activity>
+53        <activity
+53-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:48:9-53:20
+54            android:name="com.example.android.wifirttscan.LocationPermissionRequestActivity"
+54-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:49:13-62
+55            android:label="@string/title_activity_location_permission_request"
+55-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:50:13-79
+56            android:parentActivityName="com.example.android.wifirttscan.MainActivity"
+56-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:51:13-55
+57            android:theme="@style/CustomAppTheme" >
+57-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:52:13-50
+58        </activity>
+59        <activity
+59-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:55:9-59:20
+60            android:name="com.example.android.wifirttscan.AccessPointRangingResultsActivity"
+60-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:55:19-68
+61            android:label="@string/title_activity_access_point_ranging_results"
+61-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:56:13-80
+62            android:parentActivityName="com.example.android.wifirttscan.MainActivity"
+62-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:57:13-55
+63            android:theme="@style/CustomAppTheme" >
+63-->C:\Users\ffran\Documents\WifiRttScan\Application\src\main\AndroidManifest.xml:58:13-50
+64        </activity>
+65    </application>
+66
+67</manifest>
