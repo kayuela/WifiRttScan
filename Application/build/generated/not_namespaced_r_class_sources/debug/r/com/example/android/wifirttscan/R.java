@@ -5599,18 +5599,20 @@ public final class R {
     public static final int recycler_row_header_label_compatibility_announced=0x7f0d0045;
     public static final int recycler_row_header_label_compatibility_proved=0x7f0d0046;
     public static final int recycler_row_header_label_ssid=0x7f0d0047;
-    public static final int reset_label_activity_access_point_ranging_results=0x7f0d0048;
-    public static final int retrieving_access_points=0x7f0d0049;
-    public static final int rssi_label_activity_access_point_ranging_results=0x7f0d004a;
-    public static final int scan_wifi_button_label=0x7f0d004b;
-    public static final int search_menu_title=0x7f0d004c;
-    public static final int stats_window_size_label_activity_access_point_ranging_results=0x7f0d004d;
-    public static final int status_bar_notification_info_overflow=0x7f0d004e;
-    public static final int success_ratio_label_activity_access_point_ranging_results=0x7f0d004f;
-    public static final int successes_in_burst_label_activity_access_point_ranging_results=0x7f0d0050;
-    public static final int textview=0x7f0d0051;
-    public static final int title_activity_access_point_ranging_results=0x7f0d0052;
-    public static final int title_activity_location_permission_request=0x7f0d0053;
+    public static final int recycler_row_item_label_togglebutton_no=0x7f0d0048;
+    public static final int recycler_row_item_label_togglebutton_yes=0x7f0d0049;
+    public static final int reset_label_activity_access_point_ranging_results=0x7f0d004a;
+    public static final int retrieving_access_points=0x7f0d004b;
+    public static final int rssi_label_activity_access_point_ranging_results=0x7f0d004c;
+    public static final int scan_wifi_button_label=0x7f0d004d;
+    public static final int search_menu_title=0x7f0d004e;
+    public static final int stats_window_size_label_activity_access_point_ranging_results=0x7f0d004f;
+    public static final int status_bar_notification_info_overflow=0x7f0d0050;
+    public static final int success_ratio_label_activity_access_point_ranging_results=0x7f0d0051;
+    public static final int successes_in_burst_label_activity_access_point_ranging_results=0x7f0d0052;
+    public static final int textview=0x7f0d0053;
+    public static final int title_activity_access_point_ranging_results=0x7f0d0054;
+    public static final int title_activity_location_permission_request=0x7f0d0055;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0e0000;

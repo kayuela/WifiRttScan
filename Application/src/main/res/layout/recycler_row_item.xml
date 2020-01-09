@@ -46,17 +46,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TBannounced"
-        android:textOff="NO"
-        android:textOn="YES" />
+        android:clickable="false"
+        android:textOff="@string/recycler_row_item_label_togglebutton_no"
+        android:textOn="@string/recycler_row_item_label_togglebutton_yes" />
 
     <ToggleButton
         android:id="@+id/toggleButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TBproved"
-        android:textOff="NO"
-        android:textOn="YES" />
+        android:clickable="false"
+        android:textOff="@string/recycler_row_item_label_togglebutton_no"
+        android:textOn="@string/recycler_row_item_label_togglebutton_yes" />
 
 </LinearLayout>
