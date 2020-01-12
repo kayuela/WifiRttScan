@@ -41,22 +41,22 @@
         android:textAlignment="center"
         android:textSize="@dimen/recycler_row_item_text_size" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton"
+    <CheckBox
+        android:id="@+id/is_announced"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:clickable="false"
-        android:textOff="@string/recycler_row_item_label_togglebutton_no"
-        android:textOn="@string/recycler_row_item_label_togglebutton_yes" />
+        android:enabled="false"
+        android:buttonTint="@color/colorAccent"
+        android:checked="true" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton2"
+    <CheckBox
+        android:id="@+id/has_been_tested"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:clickable="false"
-        android:textOff="@string/recycler_row_item_label_togglebutton_no"
-        android:textOn="@string/recycler_row_item_label_togglebutton_yes" />
+        android:enabled="false"
+        android:buttonTint="@color/colorAccent"
+        android:checked="true" />
 
 </LinearLayout>

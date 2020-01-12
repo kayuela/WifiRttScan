@@ -144,9 +144,9 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
 
             for (ScanResult scanResult : originalList) {
 
-                if (scanResult.is80211mcResponder()) {
+                //if (scanResult.is80211mcResponder()) {
                     newList.add(new ScanResultComp(scanResult));
-                }
+                //}
 
                 if (newList.size() >= RangingRequest.getMaxPeers()) {
                     break;

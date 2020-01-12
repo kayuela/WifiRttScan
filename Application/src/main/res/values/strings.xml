@@ -50,5 +50,6 @@
     <string name="number_of_requests_label_activity_access_point_ranging_results">Number of requests:</string>
     <string name="mac_mismatch_message_activity_access_point_ranging_results">Callback MAC address doesn\'t match original request MAC address.</string>
     <string name="textview">TextView</string>
+    <string name="word_yes">Yes</string>
 
 </resources>

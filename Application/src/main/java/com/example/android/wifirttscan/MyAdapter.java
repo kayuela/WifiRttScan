@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -53,10 +54,10 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     public class ViewHolderItem extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView mSsidTextView;
-        public TextView mBssidTextView;
-        public ToggleButton mCompAnnouncedToggleButton;
-        public ToggleButton mCompProvedToggleButton;
+        private TextView mSsidTextView;
+        private TextView mBssidTextView;
+        private CheckBox mIsAnnouncedCheckBox;
+        private CheckBox mHasBeenCheckedCheckBox;
 
 
         public ViewHolderItem(View view) {
@@ -64,8 +65,8 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
             view.setOnClickListener(this);
             mSsidTextView = view.findViewById(R.id.ssid_text_view);
             mBssidTextView = view.findViewById(R.id.bssid_text_view);
-            mCompAnnouncedToggleButton = view.findViewById(R.id.comp_announced_text_view);
-            mCompProvedToggleButton =  view.findViewById(R.id.comp_proved_text_view);
+            mIsAnnouncedCheckBox = view.findViewById(R.id.is_announced);
+            mHasBeenCheckedCheckBox = view.findViewById(R.id.has_been_tested);
         }
 
         @Override
@@ -121,8 +122,8 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
 
             viewHolderItem.mSsidTextView.setText(currentScanResult.getSSID());
             viewHolderItem.mBssidTextView.setText(currentScanResult.getBSSID());
-            viewHolderItem.mCompAnnouncedToggleButton.setChecked(currentScanResult.is80211mcResponderAnnounced());
-            viewHolderItem.mCompProvedToggleButton.setChecked(currentScanResult.is80211mcResponder());
+            viewHolderItem.mIsAnnouncedCheckBox.setChecked(currentScanResult.is80211mcResponderAnnounced());
+            viewHolderItem.mHasBeenCheckedCheckBox.setChecked(currentScanResult.is80211mcResponder());
 
         } else {
             throw new RuntimeException(viewHolder + " isn't a valid view holder.");
