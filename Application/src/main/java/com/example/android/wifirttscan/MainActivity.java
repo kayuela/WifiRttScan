@@ -19,8 +19,6 @@ import static com.example.android.wifirttscan.AccessPointRangingResultsActivity.
 
 import android.Manifest.permission;
 import android.annotation.SuppressLint;
-import android.bluetooth.BluetoothDevice;
-import android.bluetooth.le.ScanRecord;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
