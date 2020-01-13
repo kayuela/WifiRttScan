@@ -250,7 +250,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     // Class that handles callbacks for all RangingRequests and issues new RangingRequests.
     private class RttRangingResultCallback extends RangingResultCallback {
 
-        private void queueNextRangingRequest() {
+        private void queueNextRangingRequest(int delay) {
             mRangeRequestDelayHandler.postDelayed(
                     new Runnable() {
                         @Override
@@ -258,13 +258,13 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                             startRangingRequest();
                         }
                     },
-                    mMillisecondsDelayBeforeNewRangingRequest);
+                    delay );
         }
 
         @Override
         public void onRangingFailure(int code) {
             Log.d(TAG, "onRangingFailure() code: " + code);
-            queueNextRangingRequest();
+            queueNextRangingRequest(mMillisecondsDelayBeforeNewRangingRequest);
         }
 
         @Override
@@ -327,7 +327,12 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                 }
             }
 
-            queueNextRangingRequest();
+            // if (mNumberOfSuccessfulRangeRequests == totalSamples (e.g. 50)) {
+            //      if (numberOfRepetitions < TotalOfRepetitions) queueNextRangingRequest(mMillisecondsDelayBeforeNewRepetition);
+            // }
+            // else queueNextRangingRequest(mMillisecondsDelayBeforeNewRangingRequest);
+
+            queueNextRangingRequest(mMillisecondsDelayBeforeNewRangingRequest);
         }
     }
 }
