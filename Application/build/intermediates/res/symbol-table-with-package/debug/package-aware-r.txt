@@ -1215,6 +1215,7 @@ id forever
 id ghost_view
 id gone
 id group_divider
+id has_been_tested
 id home
 id homeAsUp
 id icon
@@ -1224,6 +1225,7 @@ id image
 id imageView
 id info
 id invisible
+id is_announced
 id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
@@ -1269,11 +1271,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id range_label
-id range_mean_label
-id range_mean_value
 id range_sd_label
-id range_sd_mean_label
-id range_sd_mean_value
 id range_sd_value
 id range_value
 id ranging_period_edit_value
@@ -1361,8 +1359,6 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
-id toggleButton
-id toggleButton2
 id top
 id topPanel
 id touch_outside
@@ -1548,6 +1544,7 @@ string successes_in_burst_label_activity_access_point_ranging_results
 string textview
 string title_activity_access_point_ranging_results
 string title_activity_location_permission_request
+string word_yes
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
