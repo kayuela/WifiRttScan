@@ -80,16 +80,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     // so the average in (1) is the average of these averages.
     private int mSampleSize;
 
-    // Used to loop over a list of distances to calculate averages (ensures data structure never
-    // get larger than sample size).
-    private int mStatisticRangeHistoryEndIndex;
-    private ArrayList<Integer> mStatisticRangeHistory;
-
-    // Used to loop over a list of the standard deviation of the measured distance to calculate
-    // averages  (ensures data structure never get larger than sample size).
-    private int mStatisticRangeSDHistoryEndIndex;
-    private ArrayList<Integer> mStatisticRangeSDHistory;
-
     private WifiRttManager mWifiRttManager;
     private RttRangingResultCallback mRttRangingResultCallback;
 
@@ -136,11 +126,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mWifiRttManager = (WifiRttManager) getSystemService(Context.WIFI_RTT_RANGING_SERVICE);
         mRttRangingResultCallback = new RttRangingResultCallback();
 
-        // Used to store range (distance) and rangeSd (standard deviation of the measured distance)
-        // history to calculate averages.
-        mStatisticRangeHistory = new ArrayList<>();
-        mStatisticRangeSDHistory = new ArrayList<>();
-
         resetData();
 
         startRangingRequest();
@@ -155,12 +140,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
         mNumberOfSuccessfulRangeRequests = 0;
         mNumberOfRangeRequests = 0;
-
-        mStatisticRangeHistoryEndIndex = 0;
-        mStatisticRangeHistory.clear();
-
-        mStatisticRangeSDHistoryEndIndex = 0;
-        mStatisticRangeSDHistory.clear();
     }
 
     private void startRangingRequest() {
@@ -179,64 +158,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
         mWifiRttManager.startRanging(
                 rangingRequest, getApplication().getMainExecutor(), mRttRangingResultCallback);
-    }
-
-    // Calculates average distance based on stored history.
-    private float getDistanceMean() {
-        float distanceSum = 0;
-
-        for (int distance : mStatisticRangeHistory) {
-            distanceSum += distance;
-        }
-
-        return distanceSum / mStatisticRangeHistory.size();
-    }
-
-    // Adds distance to history. If larger than sample size value, loops back over and replaces the
-    // oldest distance record in the list.
-    private void addDistanceToHistory(int distance) {
-
-        if (mStatisticRangeHistory.size() >= mSampleSize) {
-
-            if (mStatisticRangeHistoryEndIndex >= mSampleSize) {
-                mStatisticRangeHistoryEndIndex = 0;
-            }
-
-            mStatisticRangeHistory.set(mStatisticRangeHistoryEndIndex, distance);
-            mStatisticRangeHistoryEndIndex++;
-
-        } else {
-            mStatisticRangeHistory.add(distance);
-        }
-    }
-
-    // Calculates standard deviation of the measured distance based on stored history.
-    private float getStandardDeviationOfDistanceMean() {
-        float distanceSdSum = 0;
-
-        for (int distanceSd : mStatisticRangeSDHistory) {
-            distanceSdSum += distanceSd;
-        }
-
-        return distanceSdSum / mStatisticRangeHistory.size();
-    }
-
-    // Adds standard deviation of the measured distance to history. If larger than sample size
-    // value, loops back over and replaces the oldest distance record in the list.
-    private void addStandardDeviationOfDistanceToHistory(int distanceSd) {
-
-        if (mStatisticRangeSDHistory.size() >= mSampleSize) {
-
-            if (mStatisticRangeSDHistoryEndIndex >= mSampleSize) {
-                mStatisticRangeSDHistoryEndIndex = 0;
-            }
-
-            mStatisticRangeSDHistory.set(mStatisticRangeSDHistoryEndIndex, distanceSd);
-            mStatisticRangeSDHistoryEndIndex++;
-
-        } else {
-            mStatisticRangeSDHistory.add(distanceSd);
-        }
     }
 
     public void onResetButtonClick(View view) {
@@ -281,12 +202,8 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                         mNumberOfSuccessfulRangeRequests++;
 
                         mRangeTextView.setText((rangingResult.getDistanceMm() / 1000f) + "");
-                        addDistanceToHistory(rangingResult.getDistanceMm());
                         mRangeSDTextView.setText(
                                 (rangingResult.getDistanceStdDevMm() / 1000f) + "");
-                        addStandardDeviationOfDistanceToHistory(
-                                rangingResult.getDistanceStdDevMm());
-
                         mRssiTextView.setText(rangingResult.getRssi() + "");
                         mSuccessesInBurstTextView.setText(
                                 rangingResult.getNumSuccessfulMeasurements()
