@@ -99,7 +99,7 @@
 
     <TextView
         android:id="@+id/range_sd_value"
-        android:layout_width="176dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
         android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
@@ -137,82 +137,57 @@
         app:layout_constraintTop_toBottomOf="@+id/range_sd_value" />
 
     <TextView
-        android:id="@+id/successes_in_burst_label"
+        android:id="@+id/num_samples_of_total_label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
         android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
         android:gravity="start"
-        android:text="@string/successes_in_burst_label_activity_access_point_ranging_results"
+        android:text="@string/num_samples_of_total"
         android:textAlignment="textStart"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rssi_label" />
 
     <TextView
-        android:id="@+id/successes_in_burst_value"
+        android:id="@+id/num_samples_of_total_value"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
         android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
         android:gravity="end"
-        android:text="@string/activity_access_point_ranging_results_requesting_default"
+        android:text="@string/num_samples_of_total_default"
         android:textAlignment="textEnd"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rssi_value" />
 
     <TextView
-        android:id="@+id/success_ratio_label"
+        android:id="@+id/num_batches_of_total_label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
         android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
         android:gravity="start"
-        android:text="@string/success_ratio_label_activity_access_point_ranging_results"
+        android:text="@string/num_batches_of_total"
         android:textAlignment="textStart"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/successes_in_burst_label" />
+        app:layout_constraintTop_toBottomOf="@+id/num_samples_of_total_label" />
 
     <TextView
-        android:id="@+id/success_ratio_value"
+        android:id="@+id/num_batches_of_total_value"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
         android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
         android:gravity="end"
-        android:text="@string/activity_access_point_ranging_results_requesting_default"
+        android:text="@string/num_batches_of_total_default"
         android:textAlignment="textEnd"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/successes_in_burst_value" />
+        app:layout_constraintTop_toBottomOf="@+id/num_samples_of_total_value" />
 
-    <TextView
-        android:id="@+id/number_of_requests_label"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
-        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
-        android:gravity="start"
-        android:text="@string/number_of_requests_label_activity_access_point_ranging_results"
-        android:textAlignment="textStart"
-        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/success_ratio_label" />
-
-    <TextView
-        android:id="@+id/number_of_requests_value"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
-        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
-        android:gravity="end"
-        android:text="@string/activity_access_point_ranging_results_requesting_default"
-        android:textAlignment="textEnd"
-        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/success_ratio_value" />
 
     <View
         android:id="@+id/divider2"
@@ -225,7 +200,7 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/number_of_requests_value" />
+        app:layout_constraintTop_toBottomOf="@+id/num_batches_of_total_label" />
 
     <TextView
         android:id="@+id/number_of_samples_label"

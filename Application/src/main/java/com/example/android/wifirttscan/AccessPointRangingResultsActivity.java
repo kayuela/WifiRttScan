@@ -57,9 +57,8 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private TextView mRangeTextView;
     private TextView mRangeSDTextView;
     private TextView mRssiTextView;
-    private TextView mSuccessesInBurstTextView;
-    private TextView mSuccessRatioTextView;
-    private TextView mNumberOfRequestsTextView;
+    private TextView mNumSampleOfTotalTextView;
+    private TextView mNumBatchOfTotalTextView;
 
     private TextView mSampleSizeTextView;
     private TextView mBatchSizeTextView;
@@ -69,7 +68,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private EditText mBatchSizeEditText;
     private EditText mMillisecondsDelayBeforeNewSampleEditText;
     private EditText mMillisecondsDelayBeforeNewBatchEditText;
-    private EditText mRealActualDistanceEditText;
 
     // Non UI variables.
     private ScanResultComp mScanResultComp;
@@ -83,7 +81,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
     private int mSampleSize;
     private int mBatchSize;
-
     private int mRealActualDistance;
 
     // Max sample size to calculate average for
@@ -111,10 +108,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mRangeTextView = findViewById(R.id.range_value);
         mRangeSDTextView = findViewById(R.id.range_sd_value);
         mRssiTextView = findViewById(R.id.rssi_value);
-        mSuccessesInBurstTextView = findViewById(R.id.successes_in_burst_value);
-        mSuccessRatioTextView = findViewById(R.id.success_ratio_value);
-        mNumberOfRequestsTextView = findViewById(R.id.number_of_requests_value);
-        mRealActualDistanceTextView = findViewById(R.id.real_actual_distance_label);
+        mRealActualDistanceTextView = findViewById(R.id.real_actual_distance_edit_value);
 
         mSampleSizeEditText = findViewById(R.id.number_of_samples_edit_value);
         mSampleSizeEditText.setText(SAMPLE_SIZE_DEFAULT + "");
@@ -122,8 +116,9 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mBatchSizeEditText = findViewById(R.id.number_of_batches_edit_value);
         mBatchSizeEditText.setText("");
 
-        mRealActualDistanceEditText = findViewById(R.id.real_actual_distance_edit_value);
-        mRealActualDistanceEditText.setText("");
+        mNumSampleOfTotalTextView = findViewById(R.id.num_samples_of_total_label);
+        mNumBatchOfTotalTextView = findViewById(R.id.num_batches_of_total_label);
+
 
         mMillisecondsDelayBeforeNewSampleEditText =
                 findViewById(R.id.time_between_samples_edit_value);
@@ -167,7 +162,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                 Integer.parseInt(
                         mMillisecondsDelayBeforeNewBatchEditText.getText().toString());
 
-        mRealActualDistance= Integer.parseInt(mRealActualDistanceEditText.getText().toString());
+        mRealActualDistance= Integer.parseInt(mRealActualDistanceTextView.getText().toString());
 
         mNumberOfSuccessfulRangeRequests = 0;
         mNumberOfRangeRequests = 0;
@@ -236,18 +231,9 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                         mRangeSDTextView.setText(
                                 (rangingResult.getDistanceStdDevMm() / 1000f) + "");
                         mRssiTextView.setText(rangingResult.getRssi() + "");
-                        mSuccessesInBurstTextView.setText(
-                                rangingResult.getNumSuccessfulMeasurements()
-                                        + "/"
-                                        + rangingResult.getNumAttemptedMeasurements());
 
-                        float successRatio =
-                                ((float) mNumberOfSuccessfulRangeRequests
-                                                / (float) mNumberOfRangeRequests)
-                                        * 100;
-                        mSuccessRatioTextView.setText(successRatio + "%");
-
-                        mNumberOfRequestsTextView.setText(mNumberOfRangeRequests + "");
+                        mNumSampleOfTotalTextView.setText(mNumberOfRangeRequests+"/"+mSampleSize);
+                        mNumBatchOfTotalTextView.setText(batchActual+"/"+mBatchSize);
 
                     } else if (rangingResult.getStatus()
                             == RangingResult.STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC) {

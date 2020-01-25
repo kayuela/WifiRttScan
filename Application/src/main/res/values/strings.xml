@@ -48,6 +48,10 @@
     <string name="time_samples_label_activity_access_point_ranging_results">Time between samples (ms):</string>
     <string name="time_batches_label_activity_access_point_ranging_results">Time between batches (ms):</string>
     <string name="real_actual_distance_label_activity_access_point_ranging_results">Real actual distance (m):</string>
+    <string name="num_samples_of_total">NºSample</string>
+    <string name="num_batches_of_total">NºBatch</string>
+    <string name="num_samples_of_total_default">x/X</string>
+    <string name="num_batches_of_total_default">y/Y</string>
 
 
     <string name="reset_label_activity_access_point_ranging_results">Reset Ranging Requests</string>

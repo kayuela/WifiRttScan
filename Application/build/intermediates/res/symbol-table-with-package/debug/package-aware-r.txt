@@ -1253,10 +1253,12 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id num_batches_of_total_label
+id num_batches_of_total_value
+id num_samples_of_total_label
+id num_samples_of_total_value
 id number_of_batches_edit_value
 id number_of_batches_label
-id number_of_requests_label
-id number_of_requests_value
 id number_of_samples_edit_value
 id number_of_samples_label
 id outline
@@ -1339,10 +1341,6 @@ id start
 id stretch
 id submenuarrow
 id submit_area
-id success_ratio_label
-id success_ratio_value
-id successes_in_burst_label
-id successes_in_burst_value
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
@@ -1521,6 +1519,10 @@ string mac_mismatch_message_activity_access_point_ranging_results
 string main_message_activity_location_permission_request
 string mtrl_chip_close_icon_content_description
 string no_thanks_activity_location_permission_request
+string num_batches_of_total
+string num_batches_of_total_default
+string num_samples_of_total
+string num_samples_of_total_default
 string number_of_batches_label_activity_access_point_ranging_results
 string number_of_requests_label_activity_access_point_ranging_results
 string number_of_samples_label_activity_access_point_ranging_results
