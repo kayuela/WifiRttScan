@@ -7,7 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e5011c8-ff76-40f7-b0aa-a1d8a05d78b5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/blame/res/debug/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/blame/res/debug/multi-v2/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/MHEivUUsIxFyoNHdSplndTNq2vU=" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/MHEivUUsIxFyoNHdSplndTNq2vU=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/wifirttscan/AccessPointRangingResultsActivity$RttRangingResultCallback$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/wifirttscan/AccessPointRangingResultsActivity$RttRangingResultCallback$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/wifirttscan/AccessPointRangingResultsActivity$RttRangingResultCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/wifirttscan/AccessPointRangingResultsActivity$RttRangingResultCallback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/wifirttscan/AccessPointRangingResultsActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/javac/debug/classes/com/example/android/wifirttscan/AccessPointRangingResultsActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/res/merged/debug/layout_activity_access_point_ranging_results.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/res/merged/debug/layout_activity_access_point_ranging_results.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/wifirttscan/AccessPointRangingResultsActivity$RttRangingResultCallback$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/wifirttscan/AccessPointRangingResultsActivity$RttRangingResultCallback$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/wifirttscan/AccessPointRangingResultsActivity$RttRangingResultCallback.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/wifirttscan/AccessPointRangingResultsActivity$RttRangingResultCallback.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/wifirttscan/AccessPointRangingResultsActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/intermediates/transforms/dexBuilder/debug/0/com/example/android/wifirttscan/AccessPointRangingResultsActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/build/outputs/apk/debug/Application-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/Application/build/outputs/apk/debug/Application-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/com/example/android/wifirttscan/AccessPointRangingResultsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/com/example/android/wifirttscan/AccessPointRangingResultsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/res/layout/activity_access_point_ranging_results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/res/layout/activity_access_point_ranging_results.xml" afterDir="false" />
     </list>
     <list id="79e8f1cc-121e-4d41-80e1-1d0f315c8ffa" name="Eliminadas variables que almacenan el historico para calcular medias" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,77 +55,20 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/wifirttscan/LocationPermissionRequestActivity.java">
+        <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_access_point_ranging_results.xml">
+          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+            <state relative-caret-position="-945">
+              <caret line="269" selection-start-line="269" selection-end-line="269" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_access_point_ranging_results.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="366" column="83" selection-start-line="366" selection-start-column="83" selection-end-line="366" selection-end-column="83" />
-              <folding>
-                <element signature="e#12428#12499#0" expanded="true" />
-                <element signature="e#13678#13741#0" expanded="true" />
-                <element signature="e#13777#13836#0" expanded="true" />
-                <element signature="e#13870#13935#0" expanded="true" />
-                <element signature="e#13989#14060#0" expanded="true" />
-                <element signature="e#14128#14189#0" expanded="true" />
-                <element signature="e#14420#14482#0" expanded="true" />
-                <element signature="e#14513#14576#0" expanded="true" />
-                <element signature="e#14610#14667#0" expanded="true" />
-                <element signature="e#14701#14766#0" expanded="true" />
-                <element signature="e#14926#14987#0" expanded="true" />
-                <element signature="e#15277#15340#0" expanded="true" />
-                <element signature="e#15376#15435#0" expanded="true" />
-                <element signature="e#15469#15534#0" expanded="true" />
-                <element signature="e#15588#15654#0" expanded="true" />
-                <element signature="e#16018#16080#0" expanded="true" />
-                <element signature="e#16111#16174#0" expanded="true" />
-                <element signature="e#16414#16475#0" expanded="true" />
-                <element signature="e#16766#16829#0" expanded="true" />
-                <element signature="e#16865#16924#0" expanded="true" />
-                <element signature="e#16958#17023#0" expanded="true" />
-                <element signature="e#17077#17143#0" expanded="true" />
-                <element signature="e#17211#17272#0" expanded="true" />
-                <element signature="e#17510#17572#0" expanded="true" />
-                <element signature="e#17603#17666#0" expanded="true" />
-                <element signature="e#17700#17757#0" expanded="true" />
-                <element signature="e#17791#17856#0" expanded="true" />
-                <element signature="e#18016#18077#0" expanded="true" />
-                <element signature="e#18375#18438#0" expanded="true" />
-                <element signature="e#18474#18533#0" expanded="true" />
-                <element signature="e#18567#18632#0" expanded="true" />
-                <element signature="e#18820#18881#0" expanded="true" />
-                <element signature="e#19119#19181#0" expanded="true" />
-                <element signature="e#19212#19275#0" expanded="true" />
-                <element signature="e#19309#19366#0" expanded="true" />
-                <element signature="e#19400#19465#0" expanded="true" />
-                <element signature="e#19625#19686#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="49" column="107" selection-start-line="49" selection-start-column="107" selection-end-line="49" selection-end-column="107" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/wifirttscan/AccessPointRangingResultsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="113" column="36" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
+            <state relative-caret-position="-1304">
+              <caret line="169" column="96" selection-start-line="169" selection-start-column="96" selection-end-line="169" selection-end-column="96" />
             </state>
           </provider>
         </entry>
@@ -124,9 +92,9 @@
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/wifirttscan/ScanResultComp.java" />
         <option value="$PROJECT_DIR$/Application/src/main/res/layout/recycler_row_item.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/wifirttscan/MyAdapter.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/wifirttscan/AccessPointRangingResultsActivity.java" />
-        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_access_point_ranging_results.xml" />
         <option value="$PROJECT_DIR$/Application/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/res/layout/activity_access_point_ranging_results.xml" />
+        <option value="$PROJECT_DIR$/Application/src/main/java/com/example/android/wifirttscan/AccessPointRangingResultsActivity.java" />
       </list>
     </option>
   </component>
@@ -143,8 +111,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -217,6 +183,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -362,6 +330,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.5010571" side_tool="true" weight="0.29959515" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4989429" visible="true" weight="0.11902834" />
@@ -561,6 +530,13 @@
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="784">
+          <caret line="49" column="107" selection-start-line="49" selection-start-column="107" selection-end-line="49" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/wifirttscan/LocationPermissionRequestActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
@@ -568,64 +544,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_access_point_ranging_results.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-945">
+          <caret line="269" selection-start-line="269" selection-end-line="269" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/main/java/com/example/android/wifirttscan/AccessPointRangingResultsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="113" column="36" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="49" column="107" selection-start-line="49" selection-start-column="107" selection-end-line="49" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/main/res/layout/activity_access_point_ranging_results.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="366" column="83" selection-start-line="366" selection-start-column="83" selection-end-line="366" selection-end-column="83" />
-          <folding>
-            <element signature="e#12428#12499#0" expanded="true" />
-            <element signature="e#13678#13741#0" expanded="true" />
-            <element signature="e#13777#13836#0" expanded="true" />
-            <element signature="e#13870#13935#0" expanded="true" />
-            <element signature="e#13989#14060#0" expanded="true" />
-            <element signature="e#14128#14189#0" expanded="true" />
-            <element signature="e#14420#14482#0" expanded="true" />
-            <element signature="e#14513#14576#0" expanded="true" />
-            <element signature="e#14610#14667#0" expanded="true" />
-            <element signature="e#14701#14766#0" expanded="true" />
-            <element signature="e#14926#14987#0" expanded="true" />
-            <element signature="e#15277#15340#0" expanded="true" />
-            <element signature="e#15376#15435#0" expanded="true" />
-            <element signature="e#15469#15534#0" expanded="true" />
-            <element signature="e#15588#15654#0" expanded="true" />
-            <element signature="e#16018#16080#0" expanded="true" />
-            <element signature="e#16111#16174#0" expanded="true" />
-            <element signature="e#16414#16475#0" expanded="true" />
-            <element signature="e#16766#16829#0" expanded="true" />
-            <element signature="e#16865#16924#0" expanded="true" />
-            <element signature="e#16958#17023#0" expanded="true" />
-            <element signature="e#17077#17143#0" expanded="true" />
-            <element signature="e#17211#17272#0" expanded="true" />
-            <element signature="e#17510#17572#0" expanded="true" />
-            <element signature="e#17603#17666#0" expanded="true" />
-            <element signature="e#17700#17757#0" expanded="true" />
-            <element signature="e#17791#17856#0" expanded="true" />
-            <element signature="e#18016#18077#0" expanded="true" />
-            <element signature="e#18375#18438#0" expanded="true" />
-            <element signature="e#18474#18533#0" expanded="true" />
-            <element signature="e#18567#18632#0" expanded="true" />
-            <element signature="e#18820#18881#0" expanded="true" />
-            <element signature="e#19119#19181#0" expanded="true" />
-            <element signature="e#19212#19275#0" expanded="true" />
-            <element signature="e#19309#19366#0" expanded="true" />
-            <element signature="e#19400#19465#0" expanded="true" />
-            <element signature="e#19625#19686#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1304">
+          <caret line="169" column="96" selection-start-line="169" selection-start-column="96" selection-end-line="169" selection-end-column="96" />
         </state>
       </provider>
     </entry>

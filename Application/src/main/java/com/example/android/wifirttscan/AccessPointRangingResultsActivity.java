@@ -61,8 +61,15 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private TextView mSuccessRatioTextView;
     private TextView mNumberOfRequestsTextView;
 
+    private TextView mSampleSizeTextView;
+    private TextView mBatchSizeTextView;
+    private TextView mRealActualDistanceTextView;
+
     private EditText mSampleSizeEditText;
-    private EditText mMillisecondsDelayBeforeNewRangingRequestEditText;
+    private EditText mBatchSizeEditText;
+    private EditText mMillisecondsDelayBeforeNewSampleEditText;
+    private EditText mMillisecondsDelayBeforeNewBatchEditText;
+    private EditText mRealActualDistanceEditText;
 
     // Non UI variables.
     private ScanResultComp mScanResultComp;
@@ -71,14 +78,20 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private int mNumberOfRangeRequests;
     private int mNumberOfSuccessfulRangeRequests;
 
-    private int mMillisecondsDelayBeforeNewRangingRequest;
+    private int mMillisecondsDelayBeforeNewSample;
+    private int mMillisecondsDelayBeforeNewBatch;
+
+    private int mSampleSize;
+    private int mBatchSize;
+
+    private int mRealActualDistance;
 
     // Max sample size to calculate average for
     // 1. Distance to device (getDistanceMm) over time
     // 2. Standard deviation of the measured distance to the device (getDistanceStdDevMm) over time
     // Note: A RangeRequest result already consists of the average of 7 readings from a burst,
     // so the average in (1) is the average of these averages.
-    private int mSampleSize;
+    private int batchActual=0;
 
     private WifiRttManager mWifiRttManager;
     private RttRangingResultCallback mRttRangingResultCallback;
@@ -101,14 +114,25 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mSuccessesInBurstTextView = findViewById(R.id.successes_in_burst_value);
         mSuccessRatioTextView = findViewById(R.id.success_ratio_value);
         mNumberOfRequestsTextView = findViewById(R.id.number_of_requests_value);
+        mRealActualDistanceTextView = findViewById(R.id.real_actual_distance_label);
 
         mSampleSizeEditText = findViewById(R.id.number_of_samples_edit_value);
         mSampleSizeEditText.setText(SAMPLE_SIZE_DEFAULT + "");
 
-        mMillisecondsDelayBeforeNewRangingRequestEditText =
+        mBatchSizeEditText = findViewById(R.id.number_of_batches_edit_value);
+        mBatchSizeEditText.setText("");
+
+        mRealActualDistanceEditText = findViewById(R.id.real_actual_distance_edit_value);
+        mRealActualDistanceEditText.setText("");
+
+        mMillisecondsDelayBeforeNewSampleEditText =
                 findViewById(R.id.time_between_samples_edit_value);
-        mMillisecondsDelayBeforeNewRangingRequestEditText.setText(
+        mMillisecondsDelayBeforeNewSampleEditText.setText(
                 MILLISECONDS_DELAY_BEFORE_NEW_RANGING_REQUEST_DEFAULT + "");
+
+        mMillisecondsDelayBeforeNewBatchEditText =
+                findViewById(R.id.time_between_batches_edit_value);
+        mMillisecondsDelayBeforeNewSampleEditText.setText("");
 
         // Retrieve ScanResult from Intent.
         Intent intent = getIntent();
@@ -133,10 +157,17 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
     private void resetData() {
         mSampleSize = Integer.parseInt(mSampleSizeEditText.getText().toString());
+        mBatchSize = Integer.parseInt(mBatchSizeEditText.getText().toString());
 
-        mMillisecondsDelayBeforeNewRangingRequest =
+        mMillisecondsDelayBeforeNewSample =
                 Integer.parseInt(
-                        mMillisecondsDelayBeforeNewRangingRequestEditText.getText().toString());
+                        mMillisecondsDelayBeforeNewSampleEditText.getText().toString());
+
+        mMillisecondsDelayBeforeNewBatch =
+                Integer.parseInt(
+                        mMillisecondsDelayBeforeNewBatchEditText.getText().toString());
+
+        mRealActualDistance= Integer.parseInt(mRealActualDistanceEditText.getText().toString());
 
         mNumberOfSuccessfulRangeRequests = 0;
         mNumberOfRangeRequests = 0;
@@ -181,7 +212,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         @Override
         public void onRangingFailure(int code) {
             Log.d(TAG, "onRangingFailure() code: " + code);
-            queueNextRangingRequest(mMillisecondsDelayBeforeNewRangingRequest);
+            queueNextRangingRequest(mMillisecondsDelayBeforeNewSample);
         }
 
         @Override
@@ -236,12 +267,12 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                 }
             }
 
-            // if (mNumberOfSuccessfulRangeRequests == totalSamples (e.g. 50)) {
-            //      if (numberOfRepetitions < TotalOfRepetitions) queueNextRangingRequest(mMillisecondsDelayBeforeNewRepetition);
-            // }
-            // else queueNextRangingRequest(mMillisecondsDelayBeforeNewRangingRequest);
-
-            queueNextRangingRequest(mMillisecondsDelayBeforeNewRangingRequest);
+            if (mNumberOfSuccessfulRangeRequests == mSampleSize) {
+                if (batchActual < mBatchSize) {
+                    queueNextRangingRequest(mMillisecondsDelayBeforeNewBatch);
+                    batchActual++;
+                }
+            } else queueNextRangingRequest(mMillisecondsDelayBeforeNewSample);
         }
     }
 }
