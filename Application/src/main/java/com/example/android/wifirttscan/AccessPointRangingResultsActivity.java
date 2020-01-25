@@ -102,11 +102,11 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mSuccessRatioTextView = findViewById(R.id.success_ratio_value);
         mNumberOfRequestsTextView = findViewById(R.id.number_of_requests_value);
 
-        mSampleSizeEditText = findViewById(R.id.stats_window_size_edit_value);
+        mSampleSizeEditText = findViewById(R.id.number_of_samples_edit_value);
         mSampleSizeEditText.setText(SAMPLE_SIZE_DEFAULT + "");
 
         mMillisecondsDelayBeforeNewRangingRequestEditText =
-                findViewById(R.id.ranging_period_edit_value);
+                findViewById(R.id.time_between_samples_edit_value);
         mMillisecondsDelayBeforeNewRangingRequestEditText.setText(
                 MILLISECONDS_DELAY_BEFORE_NEW_RANGING_REQUEST_DEFAULT + "");
 

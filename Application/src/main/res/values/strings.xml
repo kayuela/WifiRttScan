@@ -43,8 +43,10 @@
     <string name="successes_in_burst_label_activity_access_point_ranging_results">Successes in burst:</string>
     <string name="success_ratio_label_activity_access_point_ranging_results">Success Ratio:</string>
 
-    <string name="stats_window_size_label_activity_access_point_ranging_results">Stats window size:</string>
-    <string name="ranging_period_label_activity_access_point_ranging_results">Ranging period (ms):</string>
+    <string name="number_of_samples_label_activity_access_point_ranging_results">#Samples:</string>
+    <string name="number_of_batches_label_activity_access_point_ranging_results">#Batches:</string>
+    <string name="time_samples_label_activity_access_point_ranging_results">Time between samples (ms):</string>
+    <string name="time_batches_label_activity_access_point_ranging_results">Time between batches (ms):</string>
 
     <string name="reset_label_activity_access_point_ranging_results">Reset Ranging Requests</string>
     <string name="number_of_requests_label_activity_access_point_ranging_results">Number of requests:</string>

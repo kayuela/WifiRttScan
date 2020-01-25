@@ -228,20 +228,20 @@
         app:layout_constraintTop_toBottomOf="@+id/number_of_requests_value" />
 
     <TextView
-        android:id="@+id/stats_window_size_label"
+        android:id="@+id/number_of_samples_label"
         android:layout_width="0dp"
         android:layout_height="@dimen/activity_access_point_ranging_request_edit_view_height"
         android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
         android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top_divider"
         android:gravity="start"
-        android:text="@string/stats_window_size_label_activity_access_point_ranging_results"
+        android:text="@string/number_of_samples_label_activity_access_point_ranging_results"
         android:textAlignment="textStart"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/divider2" />
 
     <EditText
-        android:id="@+id/stats_window_size_edit_value"
+        android:id="@+id/number_of_samples_edit_value"
         android:layout_width="@dimen/activity_access_point_ranging_request_edit_view_width"
         android:layout_height="@dimen/activity_access_point_ranging_request_edit_view_height"
         android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
@@ -252,36 +252,93 @@
         android:textAlignment="textEnd"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/divider2"
-        tools:text="50" />
+        app:layout_constraintTop_toBottomOf="@+id/divider2"
+        tools:text="500" />
 
     <TextView
-        android:id="@+id/ranging_period_label"
+        android:id="@+id/number_of_batches_label"
         android:layout_width="0dp"
         android:layout_height="@dimen/activity_access_point_ranging_request_edit_view_height"
         android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
-        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
+        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top_divider"
         android:gravity="start"
-        android:text="@string/ranging_period_label_activity_access_point_ranging_results"
+        android:text="@string/number_of_batches_label_activity_access_point_ranging_results"
         android:textAlignment="textStart"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stats_window_size_label" />
+        app:layout_constraintTop_toBottomOf="@+id/number_of_samples_label"/>
 
-    <EditText
-        android:id="@+id/ranging_period_edit_value"
+    <TextView
+        android:id="@+id/number_of_batches_edit_value"
         android:layout_width="@dimen/activity_access_point_ranging_request_edit_view_width"
         android:layout_height="@dimen/activity_access_point_ranging_request_edit_view_height"
         android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
-        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
+        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top_divider"
         android:ems="10"
         android:singleLine="true"
         android:inputType="number"
         android:textAlignment="textEnd"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stats_window_size_edit_value"
-        tools:text="1000" />
+        app:layout_constraintTop_toBottomOf="@+id/number_of_samples_edit_value"
+        tools:text="5" />
+
+    <TextView
+        android:id="@+id/time_between_samples_label"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/activity_access_point_ranging_request_edit_view_height"
+        android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
+        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top_divider"
+        android:gravity="start"
+        android:text="@string/time_samples_label_activity_access_point_ranging_results"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number_of_batches_label" />
+
+    <EditText
+        android:id="@+id/time_between_samples_edit_value"
+        android:layout_width="@dimen/activity_access_point_ranging_request_edit_view_width"
+        android:layout_height="@dimen/activity_access_point_ranging_request_edit_view_height"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="number"
+        android:singleLine="true"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number_of_batches_edit_value"
+        tools:text="20" />
+
+    <TextView
+        android:id="@+id/time_between_batches_label"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/activity_access_point_ranging_request_edit_view_height"
+        android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
+        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top_divider"
+        android:gravity="start"
+        android:text="@string/time_batches_label_activity_access_point_ranging_results"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_between_samples_label" />
+
+    <EditText
+        android:id="@+id/time_between_batches_edit_value"
+        android:layout_width="@dimen/activity_access_point_ranging_request_edit_view_width"
+        android:layout_height="@dimen/activity_access_point_ranging_request_edit_view_height"
+        android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
+        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top_divider"
+        android:ems="10"
+        android:singleLine="true"
+        android:inputType="number"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_between_samples_edit_value"
+        tools:text="5"  />
+
 
     <Button
         android:id="@+id/reset_button"

@@ -1253,8 +1253,12 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id number_of_batches_edit_value
+id number_of_batches_label
 id number_of_requests_label
 id number_of_requests_value
+id number_of_samples_edit_value
+id number_of_samples_label
 id outline
 id packed
 id parallax
@@ -1274,8 +1278,6 @@ id range_label
 id range_sd_label
 id range_sd_value
 id range_value
-id ranging_period_edit_value
-id ranging_period_label
 id rectangles
 id recycler_view
 id relativeLayout
@@ -1332,8 +1334,6 @@ id ssid
 id ssid_text_view
 id standard
 id start
-id stats_window_size_edit_value
-id stats_window_size_label
 id stretch
 id submenuarrow
 id submit_area
@@ -1355,6 +1355,10 @@ id textinput_counter
 id textinput_error
 id textinput_helper_text
 id time
+id time_between_batches_edit_value
+id time_between_batches_label
+id time_between_samples_edit_value
+id time_between_samples_label
 id title
 id titleDividerNoCustom
 id title_template
@@ -1515,7 +1519,9 @@ string mac_mismatch_message_activity_access_point_ranging_results
 string main_message_activity_location_permission_request
 string mtrl_chip_close_icon_content_description
 string no_thanks_activity_location_permission_request
+string number_of_batches_label_activity_access_point_ranging_results
 string number_of_requests_label_activity_access_point_ranging_results
+string number_of_samples_label_activity_access_point_ranging_results
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1525,7 +1531,6 @@ string range_label_activity_access_point_ranging_results
 string range_mean_label_activity_access_point_ranging_results
 string range_sd_label_activity_access_point_ranging_results
 string range_sd_mean_activity_access_point_ranging_results
-string ranging_period_label_activity_access_point_ranging_results
 string recycler_row_header_label_bssid
 string recycler_row_header_label_compatibility_announced
 string recycler_row_header_label_compatibility_proved
@@ -1537,11 +1542,12 @@ string retrieving_access_points
 string rssi_label_activity_access_point_ranging_results
 string scan_wifi_button_label
 string search_menu_title
-string stats_window_size_label_activity_access_point_ranging_results
 string status_bar_notification_info_overflow
 string success_ratio_label_activity_access_point_ranging_results
 string successes_in_burst_label_activity_access_point_ranging_results
 string textview
+string time_batches_label_activity_access_point_ranging_results
+string time_samples_label_activity_access_point_ranging_results
 string title_activity_access_point_ranging_results
 string title_activity_location_permission_request
 string word_yes
