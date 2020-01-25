@@ -1278,6 +1278,8 @@ id range_label
 id range_sd_label
 id range_sd_value
 id range_value
+id real_actual_distance_edit_value
+id real_actual_distance_label
 id rectangles
 id recycler_view
 id relativeLayout
@@ -1531,6 +1533,7 @@ string range_label_activity_access_point_ranging_results
 string range_mean_label_activity_access_point_ranging_results
 string range_sd_label_activity_access_point_ranging_results
 string range_sd_mean_activity_access_point_ranging_results
+string real_actual_distance_label_activity_access_point_ranging_results
 string recycler_row_header_label_bssid
 string recycler_row_header_label_compatibility_announced
 string recycler_row_header_label_compatibility_proved

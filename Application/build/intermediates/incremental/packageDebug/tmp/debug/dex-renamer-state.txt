@@ -1,4 +1,4 @@
-#Sat Jan 25 12:08:36 CET 2020
+#Sat Jan 25 12:14:02 CET 2020
 base.0=C\:\\Users\\ffran\\Documents\\WifiRttScan\\Application\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

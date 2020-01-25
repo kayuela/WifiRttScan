@@ -337,8 +337,34 @@
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/time_between_samples_edit_value"
-        tools:text="5"  />
+        tools:text="60000"  />
 
+    <TextView
+        android:id="@+id/real_actual_distance_label"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/activity_access_point_ranging_request_edit_view_height"
+        android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
+        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top_divider"
+        android:gravity="start"
+        android:text="@string/real_actual_distance_label_activity_access_point_ranging_results"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_between_batches_label" />
+
+    <EditText
+        android:id="@+id/real_actual_distance_edit_value"
+        android:layout_width="@dimen/activity_access_point_ranging_request_edit_view_width"
+        android:layout_height="@dimen/activity_access_point_ranging_request_edit_view_height"
+        android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
+        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top_divider"
+        android:ems="10"
+        android:singleLine="true"
+        android:inputType="number"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_between_batches_edit_value" />
 
     <Button
         android:id="@+id/reset_button"

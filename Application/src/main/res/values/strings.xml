@@ -47,6 +47,8 @@
     <string name="number_of_batches_label_activity_access_point_ranging_results">#Batches:</string>
     <string name="time_samples_label_activity_access_point_ranging_results">Time between samples (ms):</string>
     <string name="time_batches_label_activity_access_point_ranging_results">Time between batches (ms):</string>
+    <string name="real_actual_distance_label_activity_access_point_ranging_results">Real actual distance (m):</string>
+
 
     <string name="reset_label_activity_access_point_ranging_results">Reset Ranging Requests</string>
     <string name="number_of_requests_label_activity_access_point_ranging_results">Number of requests:</string>
