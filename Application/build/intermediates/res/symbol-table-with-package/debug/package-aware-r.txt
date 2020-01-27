@@ -1276,10 +1276,6 @@ id position
 id progress_circular
 id progress_horizontal
 id radio
-id range_label
-id range_sd_label
-id range_sd_value
-id range_value
 id real_actual_distance_edit_value
 id real_actual_distance_label
 id rectangles
@@ -1290,8 +1286,6 @@ id reverseSawtooth
 id right
 id right_icon
 id right_side
-id rssi_label
-id rssi_value
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type

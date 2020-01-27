@@ -54,9 +54,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private TextView mSsidTextView;
     private TextView mBssidTextView;
 
-    private TextView mRangeTextView;
-    private TextView mRangeSDTextView;
-    private TextView mRssiTextView;
     private TextView mNumSampleOfTotalTextView;
     private TextView mNumBatchOfTotalTextView;
 
@@ -105,16 +102,15 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mSsidTextView = findViewById(R.id.ssid);
         mBssidTextView = findViewById(R.id.bssid);
 
-        mRangeTextView = findViewById(R.id.range_value);
-        mRangeSDTextView = findViewById(R.id.range_sd_value);
-        mRssiTextView = findViewById(R.id.rssi_value);
+
         mRealActualDistanceTextView = findViewById(R.id.real_actual_distance_edit_value);
 
-        mSampleSizeEditText = findViewById(R.id.number_of_samples_edit_value);
-        mSampleSizeEditText.setText(SAMPLE_SIZE_DEFAULT + "");
+        mSampleSizeTextView = findViewById(R.id.number_of_samples_label);
+        mBatchSizeTextView = findViewById(R.id.number_of_batches_label);
 
+        mSampleSizeEditText = findViewById(R.id.number_of_samples_edit_value);
         mBatchSizeEditText = findViewById(R.id.number_of_batches_edit_value);
-        mBatchSizeEditText.setText("");
+
 
         mNumSampleOfTotalTextView = findViewById(R.id.num_samples_of_total_label);
         mNumBatchOfTotalTextView = findViewById(R.id.num_batches_of_total_label);
@@ -226,12 +222,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                     if (rangingResult.getStatus() == RangingResult.STATUS_SUCCESS) {
 
                         mNumberOfSuccessfulRangeRequests++;
-
-                        mRangeTextView.setText((rangingResult.getDistanceMm() / 1000f) + "");
-                        mRangeSDTextView.setText(
-                                (rangingResult.getDistanceStdDevMm() / 1000f) + "");
-                        mRssiTextView.setText(rangingResult.getRssi() + "");
-
                         mNumSampleOfTotalTextView.setText(mNumberOfRangeRequests+"/"+mSampleSize);
                         mNumBatchOfTotalTextView.setText(batchActual+"/"+mBatchSize);
 

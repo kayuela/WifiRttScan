@@ -58,83 +58,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bssid" />
 
-    <TextView
-        android:id="@+id/range_label"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
-        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top_divider"
-        android:gravity="start"
-        android:text="@string/range_label_activity_access_point_ranging_results"
-        android:textAlignment="textStart"
-        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/divider1" />
 
-    <TextView
-        android:id="@+id/range_value"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
-        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top_divider"
-        android:gravity="end"
-        android:text="@string/activity_access_point_ranging_results_requesting_default"
-        android:textAlignment="textEnd"
-        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
-    <TextView
-        android:id="@+id/range_sd_label"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
-        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
-        android:gravity="start"
-        android:text="@string/range_sd_label_activity_access_point_ranging_results"
-        android:textAlignment="textStart"
-        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/range_label" />
 
-    <TextView
-        android:id="@+id/range_sd_value"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
-        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
-        android:gravity="end"
-        android:text="@string/activity_access_point_ranging_results_requesting_default"
-        android:textAlignment="textEnd"
-        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/range_value" />
-
-    <TextView
-        android:id="@+id/rssi_label"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
-        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
-        android:gravity="start"
-        android:text="@string/rssi_label_activity_access_point_ranging_results"
-        android:textAlignment="textStart"
-        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/range_sd_label" />
-
-    <TextView
-        android:id="@+id/rssi_value"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
-        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
-        android:gravity="end"
-        android:text="@string/activity_access_point_ranging_results_requesting_default"
-        android:textAlignment="textEnd"
-        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/range_sd_value" />
 
     <TextView
         android:id="@+id/num_samples_of_total_label"
@@ -147,7 +73,7 @@
         android:textAlignment="textStart"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rssi_label" />
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
     <TextView
         android:id="@+id/num_samples_of_total_value"
@@ -160,7 +86,7 @@
         android:textAlignment="textEnd"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rssi_value" />
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
     <TextView
         android:id="@+id/num_batches_of_total_label"
