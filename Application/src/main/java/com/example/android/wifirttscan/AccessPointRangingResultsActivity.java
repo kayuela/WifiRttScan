@@ -46,7 +46,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
     public static final String SCAN_RESULT_EXTRA =
             "com.example.android.wifirttscan.extra.SCAN_RESULT";
-    
+
     private static final int MILLISECONDS_DELAY_BEFORE_NEW_RANGING_REQUEST_DEFAULT = 1000;
 
     // UI Elements.
@@ -211,9 +211,9 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
             //IDEA PARA EL GUARDADO DE LA INFORMACIÓN
             //File samples = new File (path_samples);
-            //FileWriter fosSamples= new FileWriter(samples);
+            //FileWriter fwSamples= new FileWriter(samples);
             //File batches = new File (path_batches);
-            //FileWriter fosBatches= new FileWriter(samples);
+            //FileWriter fwBatches= new FileWriter(samples);
 
 
             // Because we are only requesting RangingResult for one access point (not multiple
@@ -232,30 +232,30 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                         mNumBatchOfTotalTextView.setText(batchActual+"/"+mBatchSize);
 
                         // ARXIU SAMPLES.TXT
-                        //fosSamples.write(rangingResult.getMacAddress());
-                        //fosSamples.write(" ");
-                        //fosSamples.write(batchActual);
-                        //fosSamples.write(" ");
-                        //fosSamples.write(mRealActualDistance);
-                        //fosSamples.write(" ");
-                        //fosSamples.write(rangingResult.getDistanceMm()/1000f);
-                        //fosSamples.write(" ");
-                        //fosSamples.write(rangingResult.getDistanceStdDevMm()/1000f);
-                        //fosSamples.write(" ");
-                        //fosSamples.write(rangingResult.getRssi());
-                        //fosSamples.write(" ");
-                        //fosSamples.write(mNumberOfSuccessfulRangeRequests);
-                        //fosSamples.write(" ");
-                        //fosSamples.write(mNumberOfRangeRequests);
-                        //fosSamples.write("\n");
+                        //fwSamples.write(rangingResult.getMacAddress());
+                        //fwSamples.write(" ");
+                        //fwSamples.write(batchActual);
+                        //fwSamples.write(" ");
+                        //fwSamples.write(mRealActualDistance);
+                        //fwSamples.write(" ");
+                        //fwSamples.write(rangingResult.getDistanceMm()/1000f);
+                        //fwSamples.write(" ");
+                        //fwSamples.write(rangingResult.getDistanceStdDevMm()/1000f);
+                        //fwSamples.write(" ");
+                        //fwSamples.write(rangingResult.getRssi());
+                        //fwSamples.write(" ");
+                        //fwSamples.write(mNumberOfSuccessfulRangeRequests);
+                        //fwSamples.write(" ");
+                        //fwSamples.write(mNumberOfRangeRequests);
+                        //fwSamples.write("\n");
 
                         // ARXIU BATCHES.TXT
-                        //fosBatches.write(batchActual);
-                        //fosBatches.write(" ");
-                        //fosSamples.write(mNumberOfSuccessfulRangeRequests);
-                        //fosSamples.write(" ");
-                        //fosSamples.write(mNumberOfRangeRequests-mNumberOfSuccessfulRangeRequests);
-                        //fosSamples.write("\n");
+                        //fwBatches.write(batchActual);
+                        //fwBatches.write(" ");
+                        //fwSamples.write(mNumberOfSuccessfulRangeRequests);
+                        //fwSamples.write(" ");
+                        //fwSamples.write(mNumberOfRangeRequests-mNumberOfSuccessfulRangeRequests);
+                        //fwSamples.write("\n");
 
 
                     } else if (rangingResult.getStatus()
