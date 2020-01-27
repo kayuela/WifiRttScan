@@ -46,8 +46,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
     public static final String SCAN_RESULT_EXTRA =
             "com.example.android.wifirttscan.extra.SCAN_RESULT";
-
-    private static final int SAMPLE_SIZE_DEFAULT = 50;
+    
     private static final int MILLISECONDS_DELAY_BEFORE_NEW_RANGING_REQUEST_DEFAULT = 1000;
 
     // UI Elements.
@@ -210,6 +209,13 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         public void onRangingResults(@NonNull List<RangingResult> list) {
             Log.d(TAG, "onRangingResults(): " + list);
 
+            //IDEA PARA EL GUARDADO DE LA INFORMACIÓN
+            //File samples = new File (path_samples);
+            //FileWriter fosSamples= new FileWriter(samples);
+            //File batches = new File (path_batches);
+            //FileWriter fosBatches= new FileWriter(samples);
+
+
             // Because we are only requesting RangingResult for one access point (not multiple
             // access points), this will only ever be one. (Use loops when requesting RangingResults
             // for multiple access points.)
@@ -224,6 +230,33 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                         mNumberOfSuccessfulRangeRequests++;
                         mNumSampleOfTotalTextView.setText(mNumberOfRangeRequests+"/"+mSampleSize);
                         mNumBatchOfTotalTextView.setText(batchActual+"/"+mBatchSize);
+
+                        // ARXIU SAMPLES.TXT
+                        //fosSamples.write(rangingResult.getMacAddress());
+                        //fosSamples.write(" ");
+                        //fosSamples.write(batchActual);
+                        //fosSamples.write(" ");
+                        //fosSamples.write(mRealActualDistance);
+                        //fosSamples.write(" ");
+                        //fosSamples.write(rangingResult.getDistanceMm()/1000f);
+                        //fosSamples.write(" ");
+                        //fosSamples.write(rangingResult.getDistanceStdDevMm()/1000f);
+                        //fosSamples.write(" ");
+                        //fosSamples.write(rangingResult.getRssi());
+                        //fosSamples.write(" ");
+                        //fosSamples.write(mNumberOfSuccessfulRangeRequests);
+                        //fosSamples.write(" ");
+                        //fosSamples.write(mNumberOfRangeRequests);
+                        //fosSamples.write("\n");
+
+                        // ARXIU BATCHES.TXT
+                        //fosBatches.write(batchActual);
+                        //fosBatches.write(" ");
+                        //fosSamples.write(mNumberOfSuccessfulRangeRequests);
+                        //fosSamples.write(" ");
+                        //fosSamples.write(mNumberOfRangeRequests-mNumberOfSuccessfulRangeRequests);
+                        //fosSamples.write("\n");
+
 
                     } else if (rangingResult.getStatus()
                             == RangingResult.STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC) {
