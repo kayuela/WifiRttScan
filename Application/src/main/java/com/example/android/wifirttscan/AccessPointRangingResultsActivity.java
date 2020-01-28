@@ -34,7 +34,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.example.android.wifirttscan.result.BatchResult;
+import com.example.android.wifirttscan.result.FileRttOutputWriter;
+import com.example.android.wifirttscan.result.SampleResult;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -58,7 +63,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
     private TextView mSampleSizeTextView;
     private TextView mBatchSizeTextView;
-    private TextView mRealActualDistanceTextView;
+    private TextView mActualDistanceTextView;
 
     private EditText mSampleSizeEditText;
     private EditText mBatchSizeEditText;
@@ -77,7 +82,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
     private int mSampleSize;
     private int mBatchSize;
-    private int mRealActualDistance;
+    private int mActualDistance;
 
     // Max sample size to calculate average for
     // 1. Distance to device (getDistanceMm) over time
@@ -91,6 +96,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
     // Triggers additional RangingRequests with delay (mMillisecondsDelayBeforeNewRangingRequest).
     final Handler mRangeRequestDelayHandler = new Handler();
+    private FileRttOutputWriter fileOutputWriter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,7 +108,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mBssidTextView = findViewById(R.id.bssid);
 
 
-        mRealActualDistanceTextView = findViewById(R.id.real_actual_distance_edit_value);
+        mActualDistanceTextView = findViewById(R.id.actual_distance_edit_value);
 
         mSampleSizeTextView = findViewById(R.id.number_of_samples_label);
         mBatchSizeTextView = findViewById(R.id.number_of_batches_label);
@@ -157,7 +163,14 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                 Integer.parseInt(
                         mMillisecondsDelayBeforeNewBatchEditText.getText().toString());
 
-        mRealActualDistance= Integer.parseInt(mRealActualDistanceTextView.getText().toString());
+        mActualDistance = Integer.parseInt(mActualDistanceTextView.getText().toString());
+
+        // Initialize the FileOutputWriter
+        try {
+            fileOutputWriter = new FileRttOutputWriter(this, mActualDistance);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         mNumberOfSuccessfulRangeRequests = 0;
         mNumberOfRangeRequests = 0;
@@ -173,6 +186,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         }
 
         mNumberOfRangeRequests++;
+        fileOutputWriter.init();
 
         RangingRequest rangingRequest =
                 new RangingRequest.Builder().addAccessPoint(mScanResultComp.getScanResult()).build();
@@ -189,6 +203,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private class RttRangingResultCallback extends RangingResultCallback {
 
         private void queueNextRangingRequest(int delay) {
+            fileOutputWriter.end();
             mRangeRequestDelayHandler.postDelayed(
                     new Runnable() {
                         @Override
@@ -209,13 +224,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         public void onRangingResults(@NonNull List<RangingResult> list) {
             Log.d(TAG, "onRangingResults(): " + list);
 
-            //IDEA PARA EL GUARDADO DE LA INFORMACIÓN
-            //File samples = new File (path_samples);
-            //FileWriter fwSamples= new FileWriter(samples);
-            //File batches = new File (path_batches);
-            //FileWriter fwBatches= new FileWriter(samples);
-
-
             // Because we are only requesting RangingResult for one access point (not multiple
             // access points), this will only ever be one. (Use loops when requesting RangingResults
             // for multiple access points.)
@@ -231,32 +239,11 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                         mNumSampleOfTotalTextView.setText(mNumberOfRangeRequests+"/"+mSampleSize);
                         mNumBatchOfTotalTextView.setText(batchActual+"/"+mBatchSize);
 
-                        // ARXIU SAMPLES.TXT
-                        //fwSamples.write(rangingResult.getMacAddress());
-                        //fwSamples.write(" ");
-                        //fwSamples.write(batchActual);
-                        //fwSamples.write(" ");
-                        //fwSamples.write(mRealActualDistance);
-                        //fwSamples.write(" ");
-                        //fwSamples.write(rangingResult.getDistanceMm()/1000f);
-                        //fwSamples.write(" ");
-                        //fwSamples.write(rangingResult.getDistanceStdDevMm()/1000f);
-                        //fwSamples.write(" ");
-                        //fwSamples.write(rangingResult.getRssi());
-                        //fwSamples.write(" ");
-                        //fwSamples.write(mNumberOfSuccessfulRangeRequests);
-                        //fwSamples.write(" ");
-                        //fwSamples.write(mNumberOfRangeRequests);
-                        //fwSamples.write("\n");
-
-                        // ARXIU BATCHES.TXT
-                        //fwBatches.write(batchActual);
-                        //fwBatches.write(" ");
-                        //fwSamples.write(mNumberOfSuccessfulRangeRequests);
-                        //fwSamples.write(" ");
-                        //fwSamples.write(mNumberOfRangeRequests-mNumberOfSuccessfulRangeRequests);
-                        //fwSamples.write("\n");
-
+                        try {
+                            fileOutputWriter.writeSample(SampleResult.from(rangingResult));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
                     } else if (rangingResult.getStatus()
                             == RangingResult.STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC) {
@@ -277,6 +264,12 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
             }
 
             if (mNumberOfSuccessfulRangeRequests == mSampleSize) {
+                try {
+                    fileOutputWriter.writeBatch(BatchResult.from(mNumberOfSuccessfulRangeRequests, mNumberOfRangeRequests));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
                 if (batchActual < mBatchSize) {
                     queueNextRangingRequest(mMillisecondsDelayBeforeNewBatch);
                     batchActual++;
