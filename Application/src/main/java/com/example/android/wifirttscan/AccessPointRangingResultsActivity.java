@@ -40,6 +40,7 @@ import com.example.android.wifirttscan.result.SampleResult;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -97,6 +98,10 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     // Triggers additional RangingRequests with delay (mMillisecondsDelayBeforeNewRangingRequest).
     final Handler mRangeRequestDelayHandler = new Handler();
     private FileRttOutputWriter fileOutputWriter;
+    private double mEstimationTime=0;
+    private double mEstimationInitialTime=0;
+    private double mEstimationFinalTime=0;
+    private Date date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,6 +150,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
         mWifiRttManager = (WifiRttManager) getSystemService(Context.WIFI_RTT_RANGING_SERVICE);
         mRttRangingResultCallback = new RttRangingResultCallback();
+        date = new Date();
 
         resetData();
 
@@ -187,6 +193,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
         mNumberOfRangeRequests++;
         fileOutputWriter.init();
+        mEstimationInitialTime=date.getTime();
 
         RangingRequest rangingRequest =
                 new RangingRequest.Builder().addAccessPoint(mScanResultComp.getScanResult()).build();
@@ -223,14 +230,13 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         @Override
         public void onRangingResults(@NonNull List<RangingResult> list) {
             Log.d(TAG, "onRangingResults(): " + list);
-
+            mEstimationFinalTime=date.getTime();
             // Because we are only requesting RangingResult for one access point (not multiple
             // access points), this will only ever be one. (Use loops when requesting RangingResults
             // for multiple access points.)
             if (list.size() == 1) {
 
                 RangingResult rangingResult = list.get(0);
-
                 if (mMAC.equals(rangingResult.getMacAddress().toString())) {
 
                     if (rangingResult.getStatus() == RangingResult.STATUS_SUCCESS) {
@@ -239,8 +245,9 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                         mNumSampleOfTotalTextView.setText(mNumberOfRangeRequests+"/"+mSampleSize);
                         mNumBatchOfTotalTextView.setText(batchActual+"/"+mBatchSize);
 
+                        mEstimationTime = mEstimationFinalTime - mEstimationInitialTime;
                         try {
-                            fileOutputWriter.writeSample(SampleResult.from(rangingResult));
+                            fileOutputWriter.writeSample(SampleResult.from(rangingResult,mEstimationTime));
                         } catch (IOException e) {
                             e.printStackTrace();
                         }

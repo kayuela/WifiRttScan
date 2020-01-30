@@ -46,6 +46,8 @@ public class FileRttOutputWriter implements RttOutputWriter {
         mFowSamples.write(" ");
         mFowSamples.write(rangingResult.getRssi());
         mFowSamples.write(" ");
+        mFowSamples.write(String.valueOf(result.mEstimationTime));
+        mFowSamples.write(" ");
         mFowSamples.write(rangingResult.getNumSuccessfulMeasurements());
         mFowSamples.write(" ");
         mFowSamples.write(rangingResult.getNumAttemptedMeasurements());

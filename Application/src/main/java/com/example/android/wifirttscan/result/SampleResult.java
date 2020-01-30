@@ -4,12 +4,14 @@ import android.net.wifi.rtt.RangingResult;
 
 public class SampleResult {
     public RangingResult mRangingResult;
+    public double mEstimationTime;
 
-    private SampleResult(RangingResult rangingResult) {
+    private SampleResult(RangingResult rangingResult, double estimationTime) {
         mRangingResult = rangingResult;
+        mEstimationTime = estimationTime;
     }
 
-    public static SampleResult from(RangingResult rangingResult) {
-        return new SampleResult(rangingResult);
+    public static SampleResult from(RangingResult rangingResult, double estimationTime) {
+        return new SampleResult(rangingResult, estimationTime);
     }
 }
