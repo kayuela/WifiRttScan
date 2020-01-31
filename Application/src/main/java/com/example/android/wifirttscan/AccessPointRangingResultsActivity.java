@@ -29,6 +29,7 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -107,6 +108,10 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_access_point_ranging_results);
+
+        //Add back button
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Initializes UI elements.
         mSsidTextView = findViewById(R.id.ssid);
@@ -201,6 +206,20 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mWifiRttManager.startRanging(
                 rangingRequest, getApplication().getMainExecutor(), mRttRangingResultCallback);
     }
+
+    // For the back button
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+
+        if (id == android.R.id.home){
+            // Ends this activity
+            this.finish();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 
     public void onResetButtonClick(View view) {
         resetData();

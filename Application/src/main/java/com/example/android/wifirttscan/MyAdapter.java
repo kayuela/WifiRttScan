@@ -122,8 +122,8 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
 
             viewHolderItem.mSsidTextView.setText(currentScanResult.getSSID());
             viewHolderItem.mBssidTextView.setText(currentScanResult.getBSSID());
-            viewHolderItem.mIsAnnouncedCheckBox.setChecked(currentScanResult.is80211mcResponder());
-            viewHolderItem.mHasBeenCheckedCheckBox.setChecked(currentScanResult.is80211mcResponderAnnounced());
+            viewHolderItem.mIsAnnouncedCheckBox.setChecked(currentScanResult.is80211mcResponderAnnounced());
+            viewHolderItem.mHasBeenCheckedCheckBox.setChecked(currentScanResult.is80211mcResponder());
 
         } else {
             throw new RuntimeException(viewHolder + " isn't a valid view holder.");

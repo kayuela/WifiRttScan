@@ -10,7 +10,7 @@ class ScanResultComp implements Parcelable {
 
     public ScanResultComp(ScanResult scanResult) {
         this.mScanResult = scanResult;
-        this.mIs80211mcResponder = true;
+        this.mIs80211mcResponder = false;
     }
 
     protected ScanResultComp(Parcel in) {
