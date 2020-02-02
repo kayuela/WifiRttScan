@@ -254,7 +254,7 @@
         app:layout_constraintTop_toBottomOf="@+id/time_between_batches_label" />
 
     <EditText
-        android:id="@+id/actual_distance_edit_value"
+        android:id="@+id/real_actual_distance_edit_value"
         android:layout_width="@dimen/activity_access_point_ranging_request_edit_view_width"
         android:layout_height="@dimen/activity_access_point_ranging_request_edit_view_height"
         android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"

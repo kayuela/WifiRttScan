@@ -16,6 +16,7 @@
 package com.example.android.wifirttscan;
 
 import android.Manifest.permission;
+import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -55,7 +56,8 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
             "com.example.android.wifirttscan.extra.SCAN_RESULT";
 
     private static final int MILLISECONDS_DELAY_BEFORE_NEW_RANGING_REQUEST_DEFAULT = 1000;
-
+    private static final int SAMPLE_SIZE_DEFAULT = 500;
+    private static final int BATCH_SIZE_DEFAULT = 20;
     // UI Elements.
     private TextView mSsidTextView;
     private TextView mBssidTextView;
@@ -71,6 +73,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private EditText mBatchSizeEditText;
     private EditText mMillisecondsDelayBeforeNewSampleEditText;
     private EditText mMillisecondsDelayBeforeNewBatchEditText;
+    private EditText mActualDistanceEditText;
 
     // Non UI variables.
     private ScanResultComp mScanResultComp;
@@ -104,6 +107,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private double mEstimationFinalTime=0;
     private Date date;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -118,14 +122,19 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mBssidTextView = findViewById(R.id.bssid);
 
 
-        mActualDistanceTextView = findViewById(R.id.actual_distance_edit_value);
+        mActualDistanceTextView = findViewById(R.id.real_actual_distance_label);
+        mActualDistanceEditText = findViewById(R.id.real_actual_distance_edit_value);
+        mActualDistanceEditText.setText("3");
 
         mSampleSizeTextView = findViewById(R.id.number_of_samples_label);
         mBatchSizeTextView = findViewById(R.id.number_of_batches_label);
+        mSampleSizeTextView.setText("#Samples");
+        mBatchSizeTextView.setText("#Batches");
 
         mSampleSizeEditText = findViewById(R.id.number_of_samples_edit_value);
         mBatchSizeEditText = findViewById(R.id.number_of_batches_edit_value);
-
+        mSampleSizeEditText.setText(SAMPLE_SIZE_DEFAULT + "");
+        mBatchSizeEditText.setText(BATCH_SIZE_DEFAULT +"");
 
         mNumSampleOfTotalTextView = findViewById(R.id.num_samples_of_total_label);
         mNumBatchOfTotalTextView = findViewById(R.id.num_batches_of_total_label);
@@ -138,7 +147,8 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
         mMillisecondsDelayBeforeNewBatchEditText =
                 findViewById(R.id.time_between_batches_edit_value);
-        mMillisecondsDelayBeforeNewSampleEditText.setText("");
+        mMillisecondsDelayBeforeNewBatchEditText.setText("20");
+
 
         // Retrieve ScanResult from Intent.
         Intent intent = getIntent();
@@ -158,14 +168,12 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         date = new Date();
 
         resetData();
-
         startRangingRequest();
     }
 
     private void resetData() {
         mSampleSize = Integer.parseInt(mSampleSizeEditText.getText().toString());
         mBatchSize = Integer.parseInt(mBatchSizeEditText.getText().toString());
-
         mMillisecondsDelayBeforeNewSample =
                 Integer.parseInt(
                         mMillisecondsDelayBeforeNewSampleEditText.getText().toString());
@@ -174,7 +182,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                 Integer.parseInt(
                         mMillisecondsDelayBeforeNewBatchEditText.getText().toString());
 
-        mActualDistance = Integer.parseInt(mActualDistanceTextView.getText().toString());
+        mActualDistance = Integer.parseInt(mActualDistanceEditText.getText().toString());
 
         // Initialize the FileOutputWriter
         try {
