@@ -205,7 +205,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         }
 
         mNumberOfRangeRequests++;
-        fileOutputWriter.init();
+        //fileOutputWriter.init();
         mEstimationInitialTime=date.getTime();
 
         RangingRequest rangingRequest =
@@ -237,7 +237,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private class RttRangingResultCallback extends RangingResultCallback {
 
         private void queueNextRangingRequest(int delay) {
-            fileOutputWriter.end();
+            //fileOutputWriter.end();
             mRangeRequestDelayHandler.postDelayed(
                     new Runnable() {
                         @Override
