@@ -134,7 +134,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mMillisecondsDelayBeforeNewSampleEditText =
                 findViewById(R.id.time_between_samples_edit_value);
         mMillisecondsDelayBeforeNewSampleEditText.setText(
-                MILLISECONDS_DELAY_BEFORE_NEW_RANGING_REQUEST_DEFAULT + "");
+                MILLISECONDS_DELAY_BEFORE_NEW_RANGING_REQUEST_DEFAULT+"");
 
         mMillisecondsDelayBeforeNewBatchEditText =
                 findViewById(R.id.time_between_batches_edit_value);
@@ -256,13 +256,15 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
             if (list.size() == 1) {
 
                 RangingResult rangingResult = list.get(0);
-                if (mMAC.equals(rangingResult.getMacAddress().toString())) {
+                if (mMAC.equals(rangingResult.getMacAddress())) {
 
                     if (rangingResult.getStatus() == RangingResult.STATUS_SUCCESS) {
-
                         mNumberOfSuccessfulRangeRequests++;
-                        mNumSampleOfTotalTextView.setText(mNumberOfRangeRequests+"/"+mSampleSize);
-                        mNumBatchOfTotalTextView.setText(batchActual+"/"+mBatchSize);
+
+                        String textSample=mNumberOfRangeRequests+"/"+mSampleSize;
+                        String textBatch=batchActual+"/"+mBatchSize;
+                        mNumSampleOfTotalTextView.setText(textSample);
+                        mNumBatchOfTotalTextView.setText(textBatch);
 
                         mEstimationTime = mEstimationFinalTime - mEstimationInitialTime;
                         try {
