@@ -56,6 +56,7 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
     public class ViewHolderItem extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView mSsidTextView;
         private TextView mBssidTextView;
+        private TextView mFrequencyBandTextView;
         private CheckBox mIsAnnouncedCheckBox;
         private CheckBox mHasBeenCheckedCheckBox;
 
@@ -65,6 +66,7 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
             view.setOnClickListener(this);
             mSsidTextView = view.findViewById(R.id.ssid_text_view);
             mBssidTextView = view.findViewById(R.id.bssid_text_view);
+            mFrequencyBandTextView = view.findViewById(R.id.frequency_band_text_view);
             mIsAnnouncedCheckBox = view.findViewById(R.id.is_announced);
             mHasBeenCheckedCheckBox = view.findViewById(R.id.has_been_tested);
         }
@@ -120,8 +122,10 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
             ViewHolderItem viewHolderItem = (ViewHolderItem) viewHolder;
             ScanResultComp currentScanResult = getItem(position);
 
-            viewHolderItem.mSsidTextView.setText(currentScanResult.getSSID());
+            final String ssid = currentScanResult.getSSID();
+            viewHolderItem.mSsidTextView.setText(ssid == null || ssid.isEmpty() ? ((ViewHolderItem) viewHolder).mSsidTextView.getContext().getString(R.string.ssid_hidden) : ssid);
             viewHolderItem.mBssidTextView.setText(currentScanResult.getBSSID());
+            viewHolderItem.mFrequencyBandTextView.setText(currentScanResult.getFrequencyBand());
             viewHolderItem.mIsAnnouncedCheckBox.setChecked(currentScanResult.is80211mcResponderAnnounced());
             viewHolderItem.mHasBeenCheckedCheckBox.setChecked(currentScanResult.is80211mcResponder());
 

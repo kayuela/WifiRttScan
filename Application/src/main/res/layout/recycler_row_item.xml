@@ -17,34 +17,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:clickable="true"
     android:orientation="horizontal"
     android:paddingTop="@dimen/recycler_row_padding"
     android:paddingBottom="@dimen/recycler_row_padding">
 
-    <TextView
-        android:id="@+id/ssid_text_view"
-        android:layout_width="70dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:textAlignment="center"
-        android:textSize="@dimen/recycler_row_item_text_size" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="6">
+        <TextView
+            android:id="@+id/ssid_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="@dimen/recycler_row_item_text_size" />
 
-    <TextView
-        android:id="@+id/bssid_text_view"
-        android:layout_width="70dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:textAlignment="center"
-        android:textSize="@dimen/recycler_row_item_text_size" />
+        <TextView
+            android:id="@+id/bssid_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="@+id/ssid_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/ssid_text_view"
+            android:textSize="@dimen/recycler_row_item_text_size" />
+        <TextView
+            android:id="@+id/frequency_band_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="@+id/bssid_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/bssid_text_view"
+            android:textSize="@dimen/recycler_row_item_text_size" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <CheckBox
         android:id="@+id/is_announced"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/activity_main_checkbox_width"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:enabled="false"
         android:buttonTint="@color/colorAccent"
@@ -52,8 +69,8 @@
 
     <CheckBox
         android:id="@+id/has_been_tested"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/activity_main_checkbox_width"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:enabled="false"
         android:buttonTint="@color/colorAccent"

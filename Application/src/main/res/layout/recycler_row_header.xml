@@ -28,43 +28,28 @@
 
     <TextView
         android:id="@+id/ssid_text_view"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:text="@string/recycler_row_header_label_ssid"
-        android:textAlignment="center"
+        android:layout_weight="6"
+        android:gravity="start|center|center_vertical"
+        android:text="@string/recycler_row_header_label_ap"
+        android:textAlignment="viewStart"
         android:textSize="@dimen/recycler_row_header_text_size"  />
 
-    <TextView
-        android:id="@+id/bssid_text_view"
-        android:layout_width="5dp"
-        android:layout_height="match_parent"
+    <ImageView
+        android:layout_width="@dimen/activity_main_checkbox_width"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_mylocation"
         android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:text="@string/recycler_row_header_label_bssid"
-        android:textAlignment="center"
-        android:textSize="@dimen/recycler_row_header_text_size" />
+        android:gravity="center|center_vertical" />
 
-    <TextView
-        android:id="@+id/comp_announced_text_view"
-        android:layout_width="22dp"
-        android:layout_height="match_parent"
+    <ImageView
+        android:layout_width="@dimen/activity_main_checkbox_width"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/star_big_on"
         android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:text="@string/recycler_row_header_label_compatibility_announced"
-        android:textAlignment="center"
-        android:textSize="@dimen/recycler_row_item_text_size" />
-
-    <TextView
-        android:id="@+id/comp_proved_text_view"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:text="@string/recycler_row_header_label_compatibility_proved"
-        android:textAlignment="center"
-        android:textSize="@dimen/recycler_row_item_text_size" />
+        android:gravity="center|center_vertical"
+        android:textAlignment="center" />
 
 </LinearLayout>
 

@@ -16,7 +16,6 @@
 package com.example.android.wifirttscan;
 
 import android.Manifest.permission;
-import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -32,6 +31,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,6 +55,8 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     public static final String SCAN_RESULT_EXTRA =
             "com.example.android.wifirttscan.extra.SCAN_RESULT";
 
+    private enum State { STOPPED, RUNNING }
+
     private static final int MILLISECONDS_DELAY_BEFORE_NEW_RANGING_REQUEST_DEFAULT = 1000;
     private static final int SAMPLE_SIZE_DEFAULT = 500;
     private static final int BATCH_SIZE_DEFAULT = 20;
@@ -65,15 +67,19 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private TextView mNumSampleOfTotalTextView;
     private TextView mNumBatchOfTotalTextView;
 
-    private TextView mSampleSizeTextView;
-    private TextView mBatchSizeTextView;
-    private TextView mActualDistanceTextView;
+    private TextView mSampleSizeLabel;
+    private TextView mBatchSizeLabel;
+    private TextView mActualDistanceLabel;
+    private TextView mMillisecondsDelayBeforeNewSampleLabel;
+    private TextView mMillisecondsDelayBeforeNewBatchLabel;
 
     private EditText mSampleSizeEditText;
     private EditText mBatchSizeEditText;
     private EditText mMillisecondsDelayBeforeNewSampleEditText;
     private EditText mMillisecondsDelayBeforeNewBatchEditText;
     private EditText mActualDistanceEditText;
+    private Button mStartButton;
+    private Button mAbortButton;
 
     // Non UI variables.
     private ScanResultComp mScanResultComp;
@@ -94,7 +100,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     // 2. Standard deviation of the measured distance to the device (getDistanceStdDevMm) over time
     // Note: A RangeRequest result already consists of the average of 7 readings from a burst,
     // so the average in (1) is the average of these averages.
-    private int batchActual=0;
+    private int mCurrentBatch =0;
 
     private WifiRttManager mWifiRttManager;
     private RttRangingResultCallback mRttRangingResultCallback;
@@ -107,46 +113,52 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private double mEstimationFinalTime=0;
     private Date date;
 
+    // State
+    private State state;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_access_point_ranging_results);
 
+        state = State.STOPPED;
+
         //Add back button
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Initializes UI elements.
+        mStartButton = findViewById(R.id.start_button);
+        mAbortButton = findViewById(R.id.abort_button);
         mSsidTextView = findViewById(R.id.ssid);
         mBssidTextView = findViewById(R.id.bssid);
 
 
-        mActualDistanceTextView = findViewById(R.id.real_actual_distance_label);
+        mActualDistanceLabel = findViewById(R.id.real_actual_distance_label);
         mActualDistanceEditText = findViewById(R.id.real_actual_distance_edit_value);
         mActualDistanceEditText.setText("3");
 
-        mSampleSizeTextView = findViewById(R.id.number_of_samples_label);
-        mBatchSizeTextView = findViewById(R.id.number_of_batches_label);
-        mSampleSizeTextView.setText("#Samples");
-        mBatchSizeTextView.setText("#Batches");
+        mSampleSizeLabel = findViewById(R.id.number_of_samples_label);
+        mBatchSizeLabel = findViewById(R.id.number_of_batches_label);
+        mSampleSizeLabel.setText("#Samples");
+        mBatchSizeLabel.setText("#Batches");
 
         mSampleSizeEditText = findViewById(R.id.number_of_samples_edit_value);
         mBatchSizeEditText = findViewById(R.id.number_of_batches_edit_value);
         mSampleSizeEditText.setText(SAMPLE_SIZE_DEFAULT + "");
         mBatchSizeEditText.setText(BATCH_SIZE_DEFAULT +"");
 
-        mNumSampleOfTotalTextView = findViewById(R.id.num_samples_of_total_label);
-        mNumBatchOfTotalTextView = findViewById(R.id.num_batches_of_total_label);
+        mNumSampleOfTotalTextView = findViewById(R.id.num_samples_of_total_value);
+        mNumBatchOfTotalTextView = findViewById(R.id.num_batches_of_total_value);
 
 
-        mMillisecondsDelayBeforeNewSampleEditText =
-                findViewById(R.id.time_between_samples_edit_value);
-        mMillisecondsDelayBeforeNewSampleEditText.setText(
-                MILLISECONDS_DELAY_BEFORE_NEW_RANGING_REQUEST_DEFAULT+"");
+        mMillisecondsDelayBeforeNewSampleLabel = findViewById(R.id.time_between_samples_label);
+        mMillisecondsDelayBeforeNewSampleEditText = findViewById(R.id.time_between_samples_edit_value);
+        mMillisecondsDelayBeforeNewSampleEditText.setText(String.valueOf(MILLISECONDS_DELAY_BEFORE_NEW_RANGING_REQUEST_DEFAULT));
 
-        mMillisecondsDelayBeforeNewBatchEditText =
-                findViewById(R.id.time_between_batches_edit_value);
+        mMillisecondsDelayBeforeNewBatchLabel = findViewById(R.id.time_between_batches_label);
+        mMillisecondsDelayBeforeNewBatchEditText = findViewById(R.id.time_between_batches_edit_value);
         mMillisecondsDelayBeforeNewBatchEditText.setText("20");
 
 
@@ -168,10 +180,13 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         date = new Date();
 
         resetData();
-        startRangingRequest();
     }
 
     private void resetData() {
+        mNumberOfSuccessfulRangeRequests = 0;
+        mNumberOfRangeRequests = 0;
+        mCurrentBatch = 0;
+
         mSampleSize = Integer.parseInt(mSampleSizeEditText.getText().toString());
         mBatchSize = Integer.parseInt(mBatchSizeEditText.getText().toString());
         mMillisecondsDelayBeforeNewSample =
@@ -184,21 +199,26 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
         mActualDistance = Integer.parseInt(mActualDistanceEditText.getText().toString());
 
+        mNumSampleOfTotalTextView.setText(String.valueOf(mNumberOfSuccessfulRangeRequests) + "/" + mSampleSizeEditText.getText());
+        mNumBatchOfTotalTextView.setText(String.valueOf(mCurrentBatch) + "/" + mBatchSizeEditText.getText());
+
         // Initialize the FileOutputWriter
         try {
             fileOutputWriter = new FileRttOutputWriter(this, mActualDistance);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
-        mNumberOfSuccessfulRangeRequests = 0;
-        mNumberOfRangeRequests = 0;
     }
 
     private void startRangingRequest() {
         // Permission for fine location should already be granted via MainActivity (you can't get
         // to this class unless you already have permission. If they get to this class, then disable
         // fine location permission, we kick them back to main activity.
+
+        synchronized (state) {
+            if (state != State.RUNNING) return;
+        }
+
         if (ActivityCompat.checkSelfPermission(this, permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
             finish();
@@ -229,23 +249,64 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
 
 
-    public void onResetButtonClick(View view) {
+    public void onAbortButtonClick(View view) {
+        synchronized (state) {
+            if (state == State.STOPPED) return;
+            state = State.STOPPED;
+        }
+
+        mRttRangingResultCallback.abort();
+        setStartButtonEnabled(true);
         resetData();
+        Toast.makeText(this, getString(R.string.measurement_process_aborted), Toast.LENGTH_LONG).show();
+    }
+
+    public void onStartButtonClick(View view) {
+        synchronized (state) {
+            if (state == State.RUNNING) return;
+            state = State.RUNNING;
+        }
+
+        setStartButtonEnabled(false);
+        startRangingRequest();
+    }
+
+    private void setStartButtonEnabled(boolean state) {
+        mStartButton.setEnabled(state);
+        mAbortButton.setEnabled(!state);
+
+        mActualDistanceLabel.setEnabled(state);
+        mActualDistanceEditText.setEnabled(state);
+
+        mSampleSizeLabel.setEnabled(state);
+        mSampleSizeEditText.setEnabled(state);
+
+        mBatchSizeLabel.setEnabled(state);
+        mBatchSizeEditText.setEnabled(state);
+
+        mMillisecondsDelayBeforeNewSampleLabel.setEnabled(state);
+        mMillisecondsDelayBeforeNewSampleEditText.setEnabled(state);
+        mMillisecondsDelayBeforeNewBatchLabel.setEnabled(state);
+        mMillisecondsDelayBeforeNewBatchEditText.setEnabled(state);
+
     }
 
     // Class that handles callbacks for all RangingRequests and issues new RangingRequests.
     private class RttRangingResultCallback extends RangingResultCallback {
 
+        private Runnable mCurrentRangeRequestRunnable;
+
         private void queueNextRangingRequest(int delay) {
             //fileOutputWriter.end();
+            mCurrentRangeRequestRunnable = () -> startRangingRequest();
+
             mRangeRequestDelayHandler.postDelayed(
-                    new Runnable() {
-                        @Override
-                        public void run() {
-                            startRangingRequest();
-                        }
-                    },
+                    mCurrentRangeRequestRunnable,
                     delay );
+        }
+
+        public void abort() {
+            mRangeRequestDelayHandler.removeCallbacks(mCurrentRangeRequestRunnable);
         }
 
         @Override
@@ -264,13 +325,16 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
             if (list.size() == 1) {
 
                 RangingResult rangingResult = list.get(0);
-                if (mMAC.equals(rangingResult.getMacAddress())) {
+                if (mMAC.equals(rangingResult.getMacAddress().toString())) {
+                    synchronized (state) {
+                        if (state != State.RUNNING) return;
+                    }
 
                     if (rangingResult.getStatus() == RangingResult.STATUS_SUCCESS) {
                         mNumberOfSuccessfulRangeRequests++;
 
                         String textSample=mNumberOfRangeRequests+"/"+mSampleSize;
-                        String textBatch=batchActual+"/"+mBatchSize;
+                        String textBatch= mCurrentBatch +"/"+mBatchSize;
                         mNumSampleOfTotalTextView.setText(textSample);
                         mNumBatchOfTotalTextView.setText(textBatch);
 
@@ -283,7 +347,15 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
                     } else if (rangingResult.getStatus()
                             == RangingResult.STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC) {
-                        Log.d(TAG, "RangingResult failed (AP doesn't support IEEE80211 MC.");
+
+                        final String msg = getString(R.string.ieee80211mc_not_supported);
+                        Log.d(TAG, msg);
+
+                        Toast.makeText(AccessPointRangingResultsActivity.this, msg, Toast.LENGTH_LONG).show();
+
+                        setStartButtonEnabled(true);
+                        resetData();
+                        return;
 
                     } else {
                         Log.d(TAG, "RangingResult failed.");
@@ -306,9 +378,9 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                if (batchActual < mBatchSize) {
+                if (mCurrentBatch < mBatchSize) {
                     queueNextRangingRequest(mMillisecondsDelayBeforeNewBatch);
-                    batchActual++;
+                    mCurrentBatch++;
                 }
             } else queueNextRangingRequest(mMillisecondsDelayBeforeNewSample);
         }

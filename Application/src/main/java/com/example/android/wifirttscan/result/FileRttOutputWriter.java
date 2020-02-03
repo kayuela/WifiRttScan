@@ -1,7 +1,9 @@
 package com.example.android.wifirttscan.result;
 
+import android.app.Application;
 import android.content.Context;
 import android.net.wifi.rtt.RangingResult;
+import android.os.Environment;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,12 +26,12 @@ public class FileRttOutputWriter implements RttOutputWriter {
     public FileRttOutputWriter(Context context, int actualDistance) throws FileNotFoundException {
         final SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ENGLISH);
         final String currentDate = formatter.format(new Date());
-        final String sampleFilename = RttOutputWriter.mRelativePath + File.separator + currentDate + "-" + RttOutputWriter.mSampleFilename;
-        final String batchFilename = RttOutputWriter.mRelativePath + File.separator + currentDate + "-" + RttOutputWriter.mBatchFilename;
 
+        final String sampleFilename = currentDate + "-" + RttOutputWriter.mSampleFilename;
+        final String batchFilename = currentDate + "-" + RttOutputWriter.mBatchFilename;
+        FileOutputStream fosSamples = context.openFileOutput(sampleFilename, Context.MODE_PRIVATE);
+        FileOutputStream fosBatches = context.openFileOutput(batchFilename, Context.MODE_PRIVATE);
 
-        FileOutputStream fosSamples = new FileOutputStream(new File(sampleFilename));
-        FileOutputStream fosBatches = new FileOutputStream (new File(batchFilename));
         this.mFowSamples = new OutputStreamWriter(fosSamples);
         this.mFowBatches = new OutputStreamWriter(fosBatches);
         this.mNumBatch = 1;

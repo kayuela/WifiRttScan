@@ -267,17 +267,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/time_between_batches_edit_value" />
 
-    <Button
-        android:id="@+id/reset_button"
-        android:layout_width="0dp"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
-        android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
-        android:onClick="onResetButtonClick"
-        android:text="@string/reset_label_activity_access_point_ranging_results"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
+            android:onClick="onStartButtonClick"
+            android:text="@string/start_label_activity_access_point_ranging_results" />
+
+        <Button
+            android:id="@+id/abort_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
+            android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
+            android:onClick="onAbortButtonClick"
+            android:text="@string/abort_label_activity_access_point_ranging_results" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

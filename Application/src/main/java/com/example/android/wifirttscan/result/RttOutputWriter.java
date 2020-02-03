@@ -5,7 +5,6 @@ import android.net.wifi.rtt.RangingResult;
 import java.io.IOException;
 
 public interface RttOutputWriter {
-    String mRelativePath = "WifiRttSample";
     String mSampleFilename = "samples.txt";
     String mBatchFilename = "batches.txt";
 

@@ -37,6 +37,8 @@ class ScanResultComp implements Parcelable {
         return mScanResult.BSSID;
     }
 
+    public String getFrequencyBand() { return String.valueOf(mScanResult.frequency + " MHz"); };
+
     public ScanResult getScanResult() {
         return mScanResult;
     }
