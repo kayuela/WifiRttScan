@@ -100,7 +100,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     // 2. Standard deviation of the measured distance to the device (getDistanceStdDevMm) over time
     // Note: A RangeRequest result already consists of the average of 7 readings from a burst,
     // so the average in (1) is the average of these averages.
-    private int mCurrentBatch =0;
+    private int mCurrentBatch =1;
 
     private WifiRttManager mWifiRttManager;
     private RttRangingResultCallback mRttRangingResultCallback;
@@ -333,7 +333,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                     if (rangingResult.getStatus() == RangingResult.STATUS_SUCCESS) {
                         mNumberOfSuccessfulRangeRequests++;
 
-                        String textSample=mNumberOfRangeRequests+"/"+mSampleSize;
+                        String textSample=mNumberOfSuccessfulRangeRequests+"/"+mSampleSize;
                         String textBatch= mCurrentBatch +"/"+mBatchSize;
                         mNumSampleOfTotalTextView.setText(textSample);
                         mNumBatchOfTotalTextView.setText(textBatch);
@@ -374,6 +374,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
             if (mNumberOfSuccessfulRangeRequests == mSampleSize) {
                 try {
                     fileOutputWriter.writeBatch(BatchResult.from(mNumberOfSuccessfulRangeRequests, mNumberOfRangeRequests));
+                    mNumberOfSuccessfulRangeRequests=0;
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
