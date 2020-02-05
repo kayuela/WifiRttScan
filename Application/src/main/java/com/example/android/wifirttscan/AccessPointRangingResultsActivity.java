@@ -185,7 +185,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private void resetData() {
         mNumberOfSuccessfulRangeRequests = 0;
         mNumberOfRangeRequests = 0;
-        mCurrentBatch = 0;
+        mCurrentBatch = 1;
 
         mSampleSize = Integer.parseInt(mSampleSizeEditText.getText().toString());
         mBatchSize = Integer.parseInt(mBatchSizeEditText.getText().toString());
@@ -266,7 +266,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
             if (state == State.RUNNING) return;
             state = State.RUNNING;
         }
-
+        resetData();
         setStartButtonEnabled(false);
         startRangingRequest();
     }
