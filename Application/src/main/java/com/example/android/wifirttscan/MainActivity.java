@@ -143,14 +143,7 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
             List<ScanResultComp> newList = new ArrayList<>();
 
             for (ScanResult scanResult : originalList) {
-
-                //if (scanResult.is80211mcResponder()) {
-                    newList.add(new ScanResultComp(scanResult));
-                //}
-
-                if (newList.size() >= RangingRequest.getMaxPeers()) {
-                    break;
-                }
+                newList.add(new ScanResultComp(scanResult));
             }
             return newList;
         }
@@ -169,10 +162,12 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
 
                     mAdapter.swapData(mAccessPointsSupporting80211mc);
 
+                    long numCapable = mAccessPointsSupporting80211mc.stream().filter(ScanResultComp::is80211mcResponderAnnounced).count();
+
                     logToUi(
                             scanResults.size()
                                     + " APs discovered, "
-                                    + mAccessPointsSupporting80211mc.size()
+                                    + numCapable
                                     + " RTT capable.");
 
                 } else {

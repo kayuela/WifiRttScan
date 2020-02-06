@@ -188,13 +188,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mCurrentBatch = 1;
 
         loadData();
-
-        // Initialize the FileOutputWriter
-        try {
-            fileOutputWriter = new FileRttOutputWriter(this, mActualDistance);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 
     private void loadData() {
@@ -271,8 +264,13 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
             state = State.RUNNING;
         }
         resetData();
+        createFiles();
         setStartButtonEnabled(false);
         startRangingRequest();
+    }
+
+    private void createFiles() {
+        fileOutputWriter = new FileRttOutputWriter(this, mActualDistance);
     }
 
     private void setStartButtonEnabled(boolean state) {
@@ -343,11 +341,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                         mNumBatchOfTotalTextView.setText(textBatch);
 
                         mEstimationTime = mEstimationFinalTime - mEstimationInitialTime;
-                        try {
-                            fileOutputWriter.writeSample(SampleResult.from(rangingResult,mEstimationTime));
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                        fileOutputWriter.writeSample(SampleResult.from(rangingResult,mEstimationTime));
 
                     } else if (rangingResult.getStatus()
                             == RangingResult.STATUS_RESPONDER_DOES_NOT_SUPPORT_IEEE80211MC) {
@@ -376,18 +370,21 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
             }
 
             if (mNumberOfSuccessfulRangeRequests == mSampleSize) {
-                try {
-                    fileOutputWriter.writeBatch(BatchResult.from(mNumberOfSuccessfulRangeRequests, mNumberOfRangeRequests));
-                    mNumberOfSuccessfulRangeRequests=0;
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                fileOutputWriter.writeBatch(BatchResult.from(mNumberOfSuccessfulRangeRequests, mNumberOfRangeRequests));
 
                 if (mCurrentBatch < mBatchSize) {
-                    queueNextRangingRequest(mMillisecondsDelayBeforeNewBatch);
+                    // Reset data for the next batch
+                    mNumberOfSuccessfulRangeRequests=0;
+                    mNumberOfRangeRequests = 0;
+
+                    // Increasing the batch number
                     mCurrentBatch++;
+
+                    // Programming the next sample according to the inter-batch delay
+                    queueNextRangingRequest(mMillisecondsDelayBeforeNewBatch);
                 }
                 else {
+                    fileOutputWriter.finish();
                     setStartButtonEnabled(true);
                     Toast.makeText(AccessPointRangingResultsActivity.this, R.string.inform_rtt_process_ended_successfully, Toast.LENGTH_SHORT).show();
                 }
