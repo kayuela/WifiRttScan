@@ -63,5 +63,6 @@
     <string name="measurement_process_aborted">Measurement process aborted</string>
     <string name="ssid_hidden">\u003c\u003chidden\u003e\u003e</string>
     <string name="ieee80211mc_not_supported">AP doesn\'t support IEEE80211 MC</string>
+    <string name="inform_rtt_process_ended_successfully">Data capture finished successfuly</string>
 
 </resources>

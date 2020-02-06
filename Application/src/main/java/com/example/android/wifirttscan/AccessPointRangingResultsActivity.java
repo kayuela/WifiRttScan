@@ -187,6 +187,17 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mNumberOfRangeRequests = 0;
         mCurrentBatch = 1;
 
+        loadData();
+
+        // Initialize the FileOutputWriter
+        try {
+            fileOutputWriter = new FileRttOutputWriter(this, mActualDistance);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loadData() {
         mSampleSize = Integer.parseInt(mSampleSizeEditText.getText().toString());
         mBatchSize = Integer.parseInt(mBatchSizeEditText.getText().toString());
         mMillisecondsDelayBeforeNewSample =
@@ -201,13 +212,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
         mNumSampleOfTotalTextView.setText(String.valueOf(mNumberOfSuccessfulRangeRequests) + "/" + mSampleSizeEditText.getText());
         mNumBatchOfTotalTextView.setText(String.valueOf(mCurrentBatch) + "/" + mBatchSizeEditText.getText());
-
-        // Initialize the FileOutputWriter
-        try {
-            fileOutputWriter = new FileRttOutputWriter(this, mActualDistance);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 
     private void startRangingRequest() {
@@ -382,6 +386,10 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                 if (mCurrentBatch < mBatchSize) {
                     queueNextRangingRequest(mMillisecondsDelayBeforeNewBatch);
                     mCurrentBatch++;
+                }
+                else {
+                    setStartButtonEnabled(true);
+                    Toast.makeText(AccessPointRangingResultsActivity.this, R.string.inform_rtt_process_ended_successfully, Toast.LENGTH_SHORT).show();
                 }
             } else queueNextRangingRequest(mMillisecondsDelayBeforeNewSample);
         }
