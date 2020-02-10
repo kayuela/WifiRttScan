@@ -54,6 +54,10 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
     public static final String SCAN_RESULT_EXTRA =
             "com.example.android.wifirttscan.extra.SCAN_RESULT";
+    private TextView mRangeLabelTextView;
+    private TextView mRangeValueTextView;
+    private TextView mStdValueTextView;
+    private TextView mStdLabelTextView;
 
     private enum State { STOPPED, RUNNING }
 
@@ -138,6 +142,11 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         mActualDistanceLabel = findViewById(R.id.real_actual_distance_label);
         mActualDistanceEditText = findViewById(R.id.real_actual_distance_edit_value);
         mActualDistanceEditText.setText("3");
+
+        mRangeLabelTextView = findViewById(R.id.range_label);
+        mRangeValueTextView = findViewById(R.id.range_value);
+        mStdLabelTextView = findViewById(R.id.std_label);
+        mStdValueTextView = findViewById(R.id.std_value);
 
         mSampleSizeLabel = findViewById(R.id.number_of_samples_label);
         mBatchSizeLabel = findViewById(R.id.number_of_batches_label);
@@ -321,6 +330,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         public void onRangingResults(@NonNull List<RangingResult> list) {
             Log.d(TAG, "onRangingResults(): " + list);
             mEstimationFinalTime=date.getTime();
+            RangingResult finalRangingResult=null;
             // Because we are only requesting RangingResult for one access point (not multiple
             // access points), this will only ever be one. (Use loops when requesting RangingResults
             // for multiple access points.)
@@ -334,6 +344,10 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
                     if (rangingResult.getStatus() == RangingResult.STATUS_SUCCESS) {
                         mNumberOfSuccessfulRangeRequests++;
+
+                        if(mNumberOfSuccessfulRangeRequests == mSampleSize){
+                            finalRangingResult=rangingResult;
+                        }
 
                         String textSample=mNumberOfSuccessfulRangeRequests+"/"+mSampleSize;
                         String textBatch= mCurrentBatch +"/"+mBatchSize;
@@ -358,7 +372,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                     } else {
                         Log.d(TAG, "RangingResult failed.");
                     }
-
                 } else {
                     Toast.makeText(
                                     getApplicationContext(),
@@ -371,6 +384,8 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
             if (mNumberOfSuccessfulRangeRequests == mSampleSize) {
                 fileOutputWriter.writeBatch(BatchResult.from(mNumberOfSuccessfulRangeRequests, mNumberOfRangeRequests));
+                mRangeValueTextView.setText(finalRangingResult.getDistanceMm()/1000f + "");
+                mStdValueTextView.setText(finalRangingResult.getDistanceStdDevMm()/1000f + "");
 
                 if (mCurrentBatch < mBatchSize) {
                     // Reset data for the next batch

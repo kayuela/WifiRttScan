@@ -45,6 +45,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="BSSID" />
 
+
     <View
         android:id="@+id/divider1"
         android:layout_width="0dp"
@@ -59,8 +60,57 @@
         app:layout_constraintTop_toBottomOf="@+id/bssid" />
 
 
+    <TextView
+        android:id="@+id/range_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
+        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
+        android:gravity="start"
+        android:text="@string/text_range_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
+    <TextView
+        android:id="@+id/range_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
+        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
+        android:gravity="end"
+        android:text="@string/range_value_default"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
+    <TextView
+        android:id="@+id/std_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
+        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
+        android:gravity="start"
+        android:text="@string/text_std_label"
+        android:textAlignment="textStart"
+        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/range_label" />
+
+    <TextView
+        android:id="@+id/std_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
+        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top"
+        android:gravity="end"
+        android:text="@string/std_value_default"
+        android:textAlignment="textEnd"
+        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/range_value" />
 
     <TextView
         android:id="@+id/num_samples_of_total_label"
@@ -73,7 +123,7 @@
         android:textAlignment="textStart"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+        app:layout_constraintTop_toBottomOf="@+id/std_label" />
 
     <TextView
         android:id="@+id/num_samples_of_total_value"
@@ -86,7 +136,7 @@
         android:textAlignment="textEnd"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+        app:layout_constraintTop_toBottomOf="@+id/std_value" />
 
     <TextView
         android:id="@+id/num_batches_of_total_label"
@@ -120,11 +170,12 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/activity_access_point_ranging_request_divider_height"
         android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
-        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top_divider"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
         android:background="?android:attr/listDivider"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/num_batches_of_total_label" />
 

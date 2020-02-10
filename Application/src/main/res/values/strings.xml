@@ -52,6 +52,11 @@
     <string name="num_batches_of_total">NºBatch</string>
     <string name="num_samples_of_total_default">x/X</string>
     <string name="num_batches_of_total_default">y/Y</string>
+    <string name="text_range_label">Range(m)</string>
+    <string name="range_value_default">0</string>
+    <string name="text_std_label">Std(m)</string>
+    <string name="std_value_default">0</string>
+
 
 
     <string name="abort_label_activity_access_point_ranging_results">Abort</string>
