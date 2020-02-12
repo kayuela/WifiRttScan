@@ -18,6 +18,7 @@ package com.example.android.wifirttscan;
 import android.Manifest.permission;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.wifi.rtt.RangingRequest;
 import android.net.wifi.rtt.RangingResult;
@@ -117,6 +118,8 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private double mEstimationFinalTime=0;
     private Date date;
 
+    private boolean mSavedPreferences;
+
     // State
     private State state;
 
@@ -189,14 +192,29 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         date = new Date();
 
         resetData();
+        String message;
+        if(this.mSavedPreferences){
+            message = "Preferences have been saved already";
+        } else {
+            message = "Preferences have not been saved yet";
+        }
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+    }
+
+    public void onDestroy(){
+        super.onDestroy();
+        savePreferences();
     }
 
     private void resetData() {
         mNumberOfSuccessfulRangeRequests = 0;
         mNumberOfRangeRequests = 0;
         mCurrentBatch = 1;
-
+        if(mSavedPreferences){
+            loadPreferences();
+        }
         loadData();
+
     }
 
     private void loadData() {
@@ -214,6 +232,35 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
         mNumSampleOfTotalTextView.setText(String.valueOf(mNumberOfSuccessfulRangeRequests) + "/" + mSampleSizeEditText.getText());
         mNumBatchOfTotalTextView.setText(String.valueOf(mCurrentBatch) + "/" + mBatchSizeEditText.getText());
+    }
+
+    public void loadPreferences(){
+        SharedPreferences prefs = getSharedPreferences("Preferences",Context.MODE_PRIVATE);
+        this.mSampleSize = prefs.getInt("NumSamples",500);
+        mSampleSizeEditText.setText(mSampleSize);
+        this.mBatchSize = prefs.getInt("NumBatches",20);
+        mBatchSizeEditText.setText(mBatchSize);
+        this.mMillisecondsDelayBeforeNewSample = prefs.getInt("TimeSamples", 20);
+        mMillisecondsDelayBeforeNewSampleEditText.setText(mMillisecondsDelayBeforeNewSample);
+        this.mMillisecondsDelayBeforeNewBatch = prefs.getInt("TimeBatches",60000);
+        mMillisecondsDelayBeforeNewBatchEditText.setText(mMillisecondsDelayBeforeNewBatch);
+        this.mActualDistance = prefs.getInt("ActualDistance",3);
+        mActualDistanceEditText.setText(mActualDistance);
+        this.mSavedPreferences = prefs.getBoolean("preferencesSaved", false);
+    }
+
+    public void savePreferences(){
+        SharedPreferences prefs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("preferencesSaved",true);
+        editor.putInt("NumSamples", mSampleSize);
+        editor.putInt("NumBatches",mBatchSize);
+        editor.putInt("TimeSamples",mMillisecondsDelayBeforeNewSample);
+        editor.putInt("TimeBatches",mMillisecondsDelayBeforeNewBatch);
+        editor.putInt("ActualDistance",mActualDistance);
+        editor.commit();
+        Toast.makeText(this,"Saving Preferences",Toast.LENGTH_SHORT).show();
+
     }
 
     private void startRangingRequest() {
