@@ -372,15 +372,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                     delay );
         }
 
-        private void queueNextRangingRequestOnNewBatch(int delay) {
-            //fileOutputWriter.end();
-            mCurrentRangeRequestRunnable = () -> startRangingRequest();
-
-            mRangeRequestDelayHandler.postDelayed(
-                    mCurrentRangeRequestRunnable,
-                    delay );
-        }
-
         public void abort() {
             mRangeRequestDelayHandler.removeCallbacks(mCurrentRangeRequestRunnable);
         }
@@ -395,7 +386,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         public void onRangingResults(@NonNull List<RangingResult> list) {
             Log.d(TAG, "onRangingResults(): " + list);
             mEstimationFinalTime=date.getTime();
-            RangingResult finalRangingResult=null;
             // Because we are only requesting RangingResult for one access point (not multiple
             // access points), this will only ever be one. (Use loops when requesting RangingResults
             // for multiple access points.)
@@ -409,10 +399,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
                     if (rangingResult.getStatus() == RangingResult.STATUS_SUCCESS) {
                         mNumberOfSuccessfulRangeRequests++;
-
-                        if(mNumberOfSuccessfulRangeRequests == mSampleSize){
-                            finalRangingResult=rangingResult;
-                        }
 
                         String textSample=mNumberOfSuccessfulRangeRequests+"/"+mSampleSize;
                         String textBatch= mCurrentBatch +"/"+mBatchSize;
