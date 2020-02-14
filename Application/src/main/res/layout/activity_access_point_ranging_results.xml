@@ -71,7 +71,7 @@
         android:textAlignment="textStart"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+        app:layout_constraintTop_toBottomOf="@+id/num_batches_of_total_label" />
 
     <TextView
         android:id="@+id/range_value"
@@ -84,7 +84,7 @@
         android:textAlignment="textEnd"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+        app:layout_constraintTop_toBottomOf="@+id/num_batches_of_total_label" />
 
     <TextView
         android:id="@+id/std_label"
@@ -123,7 +123,7 @@
         android:textAlignment="textStart"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/std_label" />
+        app:layout_constraintTop_toBottomOf="@+id/divider1"/>
 
     <TextView
         android:id="@+id/num_samples_of_total_value"
@@ -136,7 +136,7 @@
         android:textAlignment="textEnd"
         android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/std_value" />
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
     <TextView
         android:id="@+id/num_batches_of_total_label"
@@ -177,7 +177,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/num_batches_of_total_label" />
+        app:layout_constraintTop_toBottomOf="@+id/std_label" />
 
     <TextView
         android:id="@+id/number_of_samples_label"
@@ -318,8 +318,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/time_between_batches_edit_value" />
 
+    <TextView
+        android:id="@+id/status_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/button_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textAlignment="center"
+        android:gravity="center|center_horizontal"
+        android:textSize="@dimen/activity_access_point_ranging_request_item_text_size"
+        android:layout_marginStart="@dimen/activity_access_point_ranging_request_margin_start"
+        android:layout_marginTop="@dimen/activity_access_point_ranging_request_margin_top_divider"
+        android:layout_marginBottom="20dp"
+        android:textStyle="italic"
+        android:layout_marginEnd="@dimen/activity_access_point_ranging_request_margin_end"
+        android:text="Status: "/>
 
     <LinearLayout
+        android:id="@+id/button_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

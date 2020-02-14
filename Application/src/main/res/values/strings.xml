@@ -50,8 +50,8 @@
     <string name="real_actual_distance_label_activity_access_point_ranging_results">Real actual distance (m):</string>
     <string name="num_samples_of_total">NºSample</string>
     <string name="num_batches_of_total">NºBatch</string>
-    <string name="num_samples_of_total_default">x/X</string>
-    <string name="num_batches_of_total_default">y/Y</string>
+    <string name="num_samples_of_total_default">0/0</string>
+    <string name="num_batches_of_total_default">0/0</string>
     <string name="text_range_label">Range(m)</string>
     <string name="range_value_default">0</string>
     <string name="text_std_label">Std(m)</string>
@@ -69,5 +69,6 @@
     <string name="ssid_hidden">\u003c\u003chidden\u003e\u003e</string>
     <string name="ieee80211mc_not_supported">AP doesn\'t support IEEE80211 MC</string>
     <string name="inform_rtt_process_ended_successfully">Data capture finished successfuly</string>
+    <string name="waiting_for_new_batch">Waiting %1$d seconds before staring the next batch</string>
 
 </resources>
