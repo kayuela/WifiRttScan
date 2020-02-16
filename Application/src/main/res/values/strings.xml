@@ -70,5 +70,6 @@
     <string name="ieee80211mc_not_supported">AP doesn\'t support IEEE80211 MC</string>
     <string name="inform_rtt_process_ended_successfully">Data capture finished successfuly</string>
     <string name="waiting_for_new_batch">Waiting %1$d seconds before staring the next batch</string>
+    <string name="SSID" />
 
 </resources>
