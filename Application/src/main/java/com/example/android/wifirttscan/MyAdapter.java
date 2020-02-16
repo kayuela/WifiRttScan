@@ -15,7 +15,6 @@
  */
 package com.example.android.wifirttscan;
 
-import android.annotation.SuppressLint;
 import android.net.wifi.ScanResult;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
@@ -24,7 +23,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import java.util.List;
 

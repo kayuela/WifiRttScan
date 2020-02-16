@@ -26,7 +26,6 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
-import android.net.wifi.rtt.RangingRequest;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -34,14 +33,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.LayoutManager;
+
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.android.wifirttscan.MyAdapter.ScanResultClickListener;
+import com.example.android.wifirttscan.compatibility.ApEntity;
+import com.example.android.wifirttscan.compatibility.DataBase;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * Displays list of Access Points enabled with WifiRTT (to check distance). Requests location
@@ -62,10 +67,12 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
     private RecyclerView mRecyclerView;
 
     private MyAdapter mAdapter;
+
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DataBase.getDataBase(getApplicationContext());
         setContentView(R.layout.activity_main);
 
         mOutputTextView = findViewById(R.id.access_point_summary_text_view);
