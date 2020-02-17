@@ -1,136 +1,143 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:17:1-63:12
-INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:17:1-63:12
-INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:17:1-63:12
+ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:2:1-43:12
+INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:2:1-43:12
+INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:2:1-43:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-alpha1] /home/imartin/.gradle/caches/transforms-2/files-2.1/0d959ec2b1d76b370de6af1012871b0d/constraintlayout-2.0.0-alpha1/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/717dd50903df0f54f313409274e15d7f/material-1.0.0-beta01/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/2ff3a8ae1b644dbbda35fe1cc0eff9c0/appcompat-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.room:room-rxjava2:2.2.2] /home/imartin/.gradle/caches/transforms-2/files-2.1/0a06945dbb9d1befaa74175f3dfc9ffb/room-rxjava2-2.2.2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.room:room-runtime:2.2.2] /home/imartin/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.fragment:fragment:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/9950db4b51cc773bea1ed2c6c66744c7/fragment-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/5766390ed41575eb5598d7be869b51c9/vectordrawable-animated-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.recyclerview:recyclerview:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/81850c5264e0e4765003998083c6dc19/recyclerview-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/2beb68a209a0df9a223e73dea0c822a5/legacy-support-core-ui-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/e1f7b25d322970ba8e1cd40e7c6f6b85/legacy-support-core-utils-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/0ceebfd835dc4ea52d6f27f10472e25b/cursoradapter-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/7f8d1d0d468b944d838fbfaaaf150d04/vectordrawable-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.transition:transition:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/2eaf387da4dd7dab7f2a9d7180d69310/transition-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.loader:loader:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/3231267a2d30ef784b8318e4ff013b54/loader-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/47a506d8713f558de59c1f944192609b/cardview-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/imartin/.gradle/caches/transforms-2/files-2.1/4201d4fddd555218353508e225243933/sqlite-framework-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.0.1] /home/imartin/.gradle/caches/transforms-2/files-2.1/97ca5fa275069525f960e29c6644a280/sqlite-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/4f8b5527496d67480951cc322460db7f/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/5276819c062a92c029464122749254f1/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/63647da4654da12a6f2785cfbbad8123/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/733fc1d306cee2c05d3e1fb0b7527020/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/imartin/.gradle/caches/transforms-2/files-2.1/7776b2d86f1f328f10855bee6fe75d86/core-runtime-2.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/3b28b9af5b32741080b46b063e2d4bed/viewpager-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/62b1b29bb44e6dc0cde792282233ce80/coordinatorlayout-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/1bee3f16c2fbbe2743cc2aec0cfbf8cf/drawerlayout-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/cf54a0192b9de426208b672040195a6b/slidingpanelayout-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/1569d85b5bd54e5fafb99759f2ff7f3c/customview-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/62cc68eb9ef95055b82b412d2599d6f1/swiperefreshlayout-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/4c0b1abfbaad4e35563811386ee66d64/asynclayoutinflater-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/11dac054a246fa39050c80d4040cc88a/core-1.0.0-beta01/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/0ceebfd835dc4ea52d6f27f10472e25b/cursoradapter-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.cardview:cardview:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/47a506d8713f558de59c1f944192609b/cardview-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/ecfc5ccd367ba27634e6c1a88476e045/versionedparcelable-1.0.0-beta01/AndroidManifest.xml:17:1-25:12
-MERGED from [androidx.documentfile:documentfile:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/fb9348430f773d89b607147f94ae374c/documentfile-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/8ff5433297ebbd074e2588b925a7188c/localbroadcastmanager-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.print:print:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/a56266caf34f0eaf8df9f06ad60bdda6/print-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/3519316576ce08bd24a55504d7982bed/interpolator-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/d49dc4fadeb8de6e841a3cc907f3e95a/lifecycle-runtime-2.0.0-beta01/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/1b7ca4594c8237301f4f67658dbc1951/lifecycle-viewmodel-2.0.0-beta01/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/d545de961ef1717c3ffc8f2b62eb4822/lifecycle-livedata-core-2.0.0-beta01/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.arch.core:core-runtime:2.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/6da69d6de3d64be12411665a04b8c64d/core-runtime-2.0.0-beta01/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:17:1-63:12
-INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:17:1-63:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/4c0b1abfbaad4e35563811386ee66d64/asynclayoutinflater-1.0.0-beta01/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/246153fc0686d4ff78c8961ca91329b7/core-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/4c7e5b6d46acfb24c04b3a473c53b419/lifecycle-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/f582580d3eb247a74d915a27810a4674/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/c75155371656c04dff3a027cdeb13e8a/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/53b4a4cf87c0ff501a8c414cec884555/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/c70a8bef3ed62675d42960780f476d6e/versionedparcelable-1.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/94d1bdd9d3f5e77b2c2deb76d0ecef77/lifecycle-viewmodel-2.0.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:2:1-43:12
+INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:2:1-43:12
 	package
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:18:5-46
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:3:5-46
 	android:versionName
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:20:5-30
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:5:5-30
 		INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml
 		INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:17:11-69
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:19:5-28
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:4:5-28
 		INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml
 		INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml
 uses-feature#android.hardware.wifi.rtt
-ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:22:5-62
+ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:7:5-62
 	android:name
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:22:19-59
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:7:19-59
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:25:5-79
+ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:8:5-79
 	android:name
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:25:22-76
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:8:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:26:5-76
+ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:9:5-76
 	android:name
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:26:22-73
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:9:22-73
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:27:5-76
+ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:10:5-76
 	android:name
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:27:22-73
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:10:22-73
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:28:5-81
+ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:28:22-78
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:11:22-78
 application
-ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:30:5-62:19
+ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:13:5-41:19
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-alpha1] /home/imartin/.gradle/caches/transforms-2/files-2.1/0d959ec2b1d76b370de6af1012871b0d/constraintlayout-2.0.0-alpha1/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-alpha1] /home/imartin/.gradle/caches/transforms-2/files-2.1/0d959ec2b1d76b370de6af1012871b0d/constraintlayout-2.0.0-alpha1/AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/717dd50903df0f54f313409274e15d7f/material-1.0.0-beta01/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/717dd50903df0f54f313409274e15d7f/material-1.0.0-beta01/AndroidManifest.xml:22:5-20
-MERGED from [androidx.core:core:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/11dac054a246fa39050c80d4040cc88a/core-1.0.0-beta01/AndroidManifest.xml:22:5-89
-MERGED from [androidx.core:core:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/11dac054a246fa39050c80d4040cc88a/core-1.0.0-beta01/AndroidManifest.xml:22:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/ecfc5ccd367ba27634e6c1a88476e045/versionedparcelable-1.0.0-beta01/AndroidManifest.xml:22:5-23:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/ecfc5ccd367ba27634e6c1a88476e045/versionedparcelable-1.0.0-beta01/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.room:room-runtime:2.2.2] /home/imartin/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.room:room-runtime:2.2.2] /home/imartin/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.core:core:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/246153fc0686d4ff78c8961ca91329b7/core-1.0.0/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/246153fc0686d4ff78c8961ca91329b7/core-1.0.0/AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/c70a8bef3ed62675d42960780f476d6e/versionedparcelable-1.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/c70a8bef3ed62675d42960780f476d6e/versionedparcelable-1.0.0/AndroidManifest.xml:22:5-23:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/11dac054a246fa39050c80d4040cc88a/core-1.0.0-beta01/AndroidManifest.xml:22:18-86
+		ADDED from [androidx.core:core:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/246153fc0686d4ff78c8961ca91329b7/core-1.0.0/AndroidManifest.xml:22:18-86
 	android:supportsRtl
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:35:9-35
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:19:9-35
 	android:label
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:33:9-41
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:17:9-41
 	android:roundIcon
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:34:9-54
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:18:9-54
 	android:installLocation
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:36:9-49
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:16:9-49
 	android:icon
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:32:9-43
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:15:9-43
 	android:allowBackup
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:31:9-35
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:14:9-35
 	android:theme
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:37:9-46
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:20:9-46
 activity#com.example.android.wifirttscan.MainActivity
-ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:39:9-48:20
+ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:21:9-30:20
 	android:label
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:41:13-45
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:23:13-45
 	android:theme
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:42:13-50
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:24:13-50
 	android:name
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:40:13-41
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:22:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:43:13-47:29
+ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:25:13-29:29
 action#android.intent.action.MAIN
-ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:44:17-69
+ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:44:25-66
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:46:17-77
+ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:28:17-77
 	android:name
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:46:27-74
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:28:27-74
 activity#com.example.android.wifirttscan.LocationPermissionRequestActivity
-ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:50:9-55:20
+ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:31:9-35:62
 	android:parentActivityName
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:53:13-55
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:34:13-55
 	android:label
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:52:13-79
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:33:13-79
 	android:theme
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:54:13-50
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:35:13-50
 	android:name
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:51:13-62
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:32:13-62
 activity#com.example.android.wifirttscan.AccessPointRangingResultsActivity
-ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:57:9-61:20
+ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:36:9-40:62
 	android:parentActivityName
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:59:13-55
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:39:13-55
 	android:label
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:58:13-80
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:38:13-80
 	android:theme
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:60:13-50
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:40:13-50
 	android:name
-		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:57:19-68
+		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml:37:13-62
 uses-sdk
 INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml
@@ -141,6 +148,10 @@ MERGED from [com.google.android.material:material:1.0.0-beta01] /home/imartin/.g
 MERGED from [com.google.android.material:material:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/717dd50903df0f54f313409274e15d7f/material-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/2ff3a8ae1b644dbbda35fe1cc0eff9c0/appcompat-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/2ff3a8ae1b644dbbda35fe1cc0eff9c0/appcompat-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-rxjava2:2.2.2] /home/imartin/.gradle/caches/transforms-2/files-2.1/0a06945dbb9d1befaa74175f3dfc9ffb/room-rxjava2-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-rxjava2:2.2.2] /home/imartin/.gradle/caches/transforms-2/files-2.1/0a06945dbb9d1befaa74175f3dfc9ffb/room-rxjava2-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.2] /home/imartin/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.2] /home/imartin/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/9950db4b51cc773bea1ed2c6c66744c7/fragment-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/9950db4b51cc773bea1ed2c6c66744c7/fragment-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/5766390ed41575eb5598d7be869b51c9/vectordrawable-animated-1.0.0-beta01/AndroidManifest.xml:20:5-44
@@ -149,14 +160,28 @@ MERGED from [androidx.recyclerview:recyclerview:1.0.0-beta01] /home/imartin/.gra
 MERGED from [androidx.recyclerview:recyclerview:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/81850c5264e0e4765003998083c6dc19/recyclerview-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/2beb68a209a0df9a223e73dea0c822a5/legacy-support-core-ui-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/2beb68a209a0df9a223e73dea0c822a5/legacy-support-core-ui-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/e1f7b25d322970ba8e1cd40e7c6f6b85/legacy-support-core-utils-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/e1f7b25d322970ba8e1cd40e7c6f6b85/legacy-support-core-utils-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/0ceebfd835dc4ea52d6f27f10472e25b/cursoradapter-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/0ceebfd835dc4ea52d6f27f10472e25b/cursoradapter-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/7f8d1d0d468b944d838fbfaaaf150d04/vectordrawable-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/7f8d1d0d468b944d838fbfaaaf150d04/vectordrawable-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.transition:transition:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/2eaf387da4dd7dab7f2a9d7180d69310/transition-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.transition:transition:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/2eaf387da4dd7dab7f2a9d7180d69310/transition-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/3231267a2d30ef784b8318e4ff013b54/loader-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.loader:loader:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/3231267a2d30ef784b8318e4ff013b54/loader-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/47a506d8713f558de59c1f944192609b/cardview-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/47a506d8713f558de59c1f944192609b/cardview-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/imartin/.gradle/caches/transforms-2/files-2.1/4201d4fddd555218353508e225243933/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/imartin/.gradle/caches/transforms-2/files-2.1/4201d4fddd555218353508e225243933/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] /home/imartin/.gradle/caches/transforms-2/files-2.1/97ca5fa275069525f960e29c6644a280/sqlite-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] /home/imartin/.gradle/caches/transforms-2/files-2.1/97ca5fa275069525f960e29c6644a280/sqlite-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/4f8b5527496d67480951cc322460db7f/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/4f8b5527496d67480951cc322460db7f/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/5276819c062a92c029464122749254f1/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/5276819c062a92c029464122749254f1/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/63647da4654da12a6f2785cfbbad8123/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/63647da4654da12a6f2785cfbbad8123/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/733fc1d306cee2c05d3e1fb0b7527020/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/733fc1d306cee2c05d3e1fb0b7527020/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/imartin/.gradle/caches/transforms-2/files-2.1/7776b2d86f1f328f10855bee6fe75d86/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.1] /home/imartin/.gradle/caches/transforms-2/files-2.1/7776b2d86f1f328f10855bee6fe75d86/core-runtime-2.0.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/3b28b9af5b32741080b46b063e2d4bed/viewpager-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/3b28b9af5b32741080b46b063e2d4bed/viewpager-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/62b1b29bb44e6dc0cde792282233ce80/coordinatorlayout-1.0.0-beta01/AndroidManifest.xml:20:5-44
@@ -169,32 +194,24 @@ MERGED from [androidx.customview:customview:1.0.0-beta01] /home/imartin/.gradle/
 MERGED from [androidx.customview:customview:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/1569d85b5bd54e5fafb99759f2ff7f3c/customview-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/62cc68eb9ef95055b82b412d2599d6f1/swiperefreshlayout-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/62cc68eb9ef95055b82b412d2599d6f1/swiperefreshlayout-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/4c0b1abfbaad4e35563811386ee66d64/asynclayoutinflater-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/4c0b1abfbaad4e35563811386ee66d64/asynclayoutinflater-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/11dac054a246fa39050c80d4040cc88a/core-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/11dac054a246fa39050c80d4040cc88a/core-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/0ceebfd835dc4ea52d6f27f10472e25b/cursoradapter-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cursoradapter:cursoradapter:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/0ceebfd835dc4ea52d6f27f10472e25b/cursoradapter-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/47a506d8713f558de59c1f944192609b/cardview-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.cardview:cardview:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/47a506d8713f558de59c1f944192609b/cardview-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/ecfc5ccd367ba27634e6c1a88476e045/versionedparcelable-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/ecfc5ccd367ba27634e6c1a88476e045/versionedparcelable-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/fb9348430f773d89b607147f94ae374c/documentfile-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/fb9348430f773d89b607147f94ae374c/documentfile-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/8ff5433297ebbd074e2588b925a7188c/localbroadcastmanager-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/8ff5433297ebbd074e2588b925a7188c/localbroadcastmanager-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/a56266caf34f0eaf8df9f06ad60bdda6/print-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.print:print:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/a56266caf34f0eaf8df9f06ad60bdda6/print-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/3519316576ce08bd24a55504d7982bed/interpolator-1.0.0-beta01/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/3519316576ce08bd24a55504d7982bed/interpolator-1.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/d49dc4fadeb8de6e841a3cc907f3e95a/lifecycle-runtime-2.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/d49dc4fadeb8de6e841a3cc907f3e95a/lifecycle-runtime-2.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/1b7ca4594c8237301f4f67658dbc1951/lifecycle-viewmodel-2.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/1b7ca4594c8237301f4f67658dbc1951/lifecycle-viewmodel-2.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/d545de961ef1717c3ffc8f2b62eb4822/lifecycle-livedata-core-2.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/d545de961ef1717c3ffc8f2b62eb4822/lifecycle-livedata-core-2.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/6da69d6de3d64be12411665a04b8c64d/core-runtime-2.0.0-beta01/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/6da69d6de3d64be12411665a04b8c64d/core-runtime-2.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/4c0b1abfbaad4e35563811386ee66d64/asynclayoutinflater-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0-beta01] /home/imartin/.gradle/caches/transforms-2/files-2.1/4c0b1abfbaad4e35563811386ee66d64/asynclayoutinflater-1.0.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/246153fc0686d4ff78c8961ca91329b7/core-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/246153fc0686d4ff78c8961ca91329b7/core-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/4c7e5b6d46acfb24c04b3a473c53b419/lifecycle-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/4c7e5b6d46acfb24c04b3a473c53b419/lifecycle-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/f582580d3eb247a74d915a27810a4674/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/f582580d3eb247a74d915a27810a4674/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/c75155371656c04dff3a027cdeb13e8a/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/c75155371656c04dff3a027cdeb13e8a/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/53b4a4cf87c0ff501a8c414cec884555/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/53b4a4cf87c0ff501a8c414cec884555/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/c70a8bef3ed62675d42960780f476d6e/versionedparcelable-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/c70a8bef3ed62675d42960780f476d6e/versionedparcelable-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/94d1bdd9d3f5e77b2c2deb76d0ecef77/lifecycle-viewmodel-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /home/imartin/.gradle/caches/transforms-2/files-2.1/94d1bdd9d3f5e77b2c2deb76d0ecef77/lifecycle-viewmodel-2.0.0/AndroidManifest.xml:20:5-44
 INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml
 INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml
 	android:targetSdkVersion
@@ -205,3 +222,9 @@ INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main
 		INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml
 		ADDED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml
 		INJECTED from /home/imartin/Development/Android/WifiRttScan/Application/src/main/AndroidManifest.xml
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.2.2] /home/imartin/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.2.2] /home/imartin/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.room:room-runtime:2.2.2] /home/imartin/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:26:13-74
