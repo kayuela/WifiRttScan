@@ -30,7 +30,6 @@ import android.os.Handler;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
 import android.util.Log;
 import android.view.MenuItem;
@@ -411,6 +410,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                             ApEntity newAP = new ApEntity();
                             newAP.setSsid(mMAC);
                             DataBase.getDataBase(getApplication()).apDao().insertAP(newAP);
+                            mScanResultComp.is80211mcResponder(true);
                         }
                         //FINISH OF THE DATABASE PROCEDURE
 
