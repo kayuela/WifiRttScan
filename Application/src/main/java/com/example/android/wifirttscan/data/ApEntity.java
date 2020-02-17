@@ -1,4 +1,4 @@
-package com.example.android.wifirttscan.compatibility;
+package com.example.android.wifirttscan.data;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
@@ -19,7 +19,6 @@ public class ApEntity {
     public String getBSSID() {
         return BSSID;
     }
-
     public void setSsid(String bssid){
         this.BSSID=bssid;
     }

@@ -19,14 +19,11 @@ import android.net.wifi.ScanResult;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
-
-import com.example.android.wifirttscan.compatibility.DataBase;
 
 import java.util.List;
 

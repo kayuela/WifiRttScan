@@ -36,17 +36,13 @@ import androidx.recyclerview.widget.RecyclerView.LayoutManager;
 
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.android.wifirttscan.MyAdapter.ScanResultClickListener;
-import com.example.android.wifirttscan.compatibility.ApEntity;
-import com.example.android.wifirttscan.compatibility.DataBase;
+import com.example.android.wifirttscan.data.DataBase;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * Displays list of Access Points enabled with WifiRTT (to check distance). Requests location
@@ -150,7 +146,9 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
             List<ScanResultComp> newList = new ArrayList<>();
 
             for (ScanResult scanResult : originalList) {
-                newList.add(new ScanResultComp(scanResult));
+                ScanResultComp scanResultComp = new ScanResultComp(scanResult);
+                scanResultComp.is80211mcResponder(DataBase.getDataBase(MainActivity.this).apDao().findByBSSID(scanResultComp.getBSSID()) != null);
+                newList.add(scanResultComp);
             }
             return newList;
         }

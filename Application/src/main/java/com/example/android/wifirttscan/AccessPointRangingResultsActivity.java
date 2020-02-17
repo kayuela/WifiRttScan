@@ -20,7 +20,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.net.wifi.ScanResult;
 import android.net.wifi.rtt.RangingRequest;
 import android.net.wifi.rtt.RangingResult;
 import android.net.wifi.rtt.RangingResultCallback;
@@ -41,8 +40,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.android.wifirttscan.compatibility.ApEntity;
-import com.example.android.wifirttscan.compatibility.DataBase;
+import com.example.android.wifirttscan.data.ApEntity;
+import com.example.android.wifirttscan.data.DataBase;
 import com.example.android.wifirttscan.result.BatchResult;
 import com.example.android.wifirttscan.result.FileRttOutputWriter;
 import com.example.android.wifirttscan.result.SampleResult;
@@ -63,7 +62,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private static final int ACTUAL_DISTANCE_DEFAULT = 3;
     public static final String SCAN_RESULT_EXTRA = "com.example.android.wifirttscan.extra.SCAN_RESULT";
 
-    private enum State { STOPPED, RUNNING;}
+    private enum State { STOPPED, RUNNING }
 
 
     private Animation animBlink;
@@ -129,7 +128,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
     // State
     private State state;
-
+    private boolean checkedAtDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -189,6 +188,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         }
 
         mMAC = mScanResultComp.getBSSID();
+        checkedAtDatabase = mScanResultComp.is80211mcResponder();
 
         mSsidTextView.setText(mScanResultComp.getSSID());
         mBssidTextView.setText(mScanResultComp.getBSSID());
@@ -406,11 +406,12 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
                         //DATABASE PROCEDURE
                         //Adding the new AP to the DataBase
-                        if(DataBase.getDataBase(getApplication()).apDao().findBySSID(mMAC)==null) {
+                        if(!checkedAtDatabase && !mScanResultComp.is80211mcResponder()) {
                             ApEntity newAP = new ApEntity();
                             newAP.setSsid(mMAC);
                             DataBase.getDataBase(getApplication()).apDao().insertAP(newAP);
                             mScanResultComp.is80211mcResponder(true);
+                            checkedAtDatabase = true;
                         }
                         //FINISH OF THE DATABASE PROCEDURE
 
