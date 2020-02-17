@@ -4,7 +4,7 @@
             "outputFile": "/home/imartin/Development/Android/WifiRttScan/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-af/values-af.xml",
             "map": [
                 {
-                    "source": "/home/imartin/.gradle/caches/transforms-2/files-2.1/11dac054a246fa39050c80d4040cc88a/core-1.0.0-beta01/res/values-af/values-af.xml",
+                    "source": "/home/imartin/.gradle/caches/transforms-2/files-2.1/246153fc0686d4ff78c8961ca91329b7/core-1.0.0/res/values-af/values-af.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
