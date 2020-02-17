@@ -20,6 +20,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.wifi.ScanResult;
 import android.net.wifi.rtt.RangingRequest;
 import android.net.wifi.rtt.RangingResult;
 import android.net.wifi.rtt.RangingResultCallback;
@@ -29,6 +30,7 @@ import android.os.Handler;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,6 +41,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.wifirttscan.compatibility.ApEntity;
+import com.example.android.wifirttscan.compatibility.DataBase;
 import com.example.android.wifirttscan.result.BatchResult;
 import com.example.android.wifirttscan.result.FileRttOutputWriter;
 import com.example.android.wifirttscan.result.SampleResult;
@@ -372,15 +376,6 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                     delay );
         }
 
-        private void queueNextRangingRequestOnNewBatch(int delay) {
-            //fileOutputWriter.end();
-            mCurrentRangeRequestRunnable = () -> startRangingRequest();
-
-            mRangeRequestDelayHandler.postDelayed(
-                    mCurrentRangeRequestRunnable,
-                    delay );
-        }
-
         public void abort() {
             mRangeRequestDelayHandler.removeCallbacks(mCurrentRangeRequestRunnable);
         }
@@ -395,7 +390,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         public void onRangingResults(@NonNull List<RangingResult> list) {
             Log.d(TAG, "onRangingResults(): " + list);
             mEstimationFinalTime=date.getTime();
-            RangingResult finalRangingResult=null;
+
             // Because we are only requesting RangingResult for one access point (not multiple
             // access points), this will only ever be one. (Use loops when requesting RangingResults
             // for multiple access points.)
@@ -408,11 +403,21 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                     }
 
                     if (rangingResult.getStatus() == RangingResult.STATUS_SUCCESS) {
-                        mNumberOfSuccessfulRangeRequests++;
 
-                        if(mNumberOfSuccessfulRangeRequests == mSampleSize){
-                            finalRangingResult=rangingResult;
+                        //DATABASE PROCEDURE
+                        //Adding the new AP to the DataBase
+                        if(DataBase.getDataBase(getApplication()).apDao().findBySSID(mMAC)==null) {
+                            ApEntity newAP = new ApEntity();
+                            newAP.setSsid(mMAC);
+                            DataBase.getDataBase(getApplication()).apDao().insertAP(newAP);
+                            mScanResultComp.is80211mcResponder(true);
                         }
+                        //FINISH OF THE DATABASE PROCEDURE
+
+                        //Update its proved compatibility attribute
+                        mScanResultComp.is80211mcResponder(true);
+
+                        mNumberOfSuccessfulRangeRequests++;
 
                         String textSample=mNumberOfSuccessfulRangeRequests+"/"+mSampleSize;
                         String textBatch= mCurrentBatch +"/"+mBatchSize;
