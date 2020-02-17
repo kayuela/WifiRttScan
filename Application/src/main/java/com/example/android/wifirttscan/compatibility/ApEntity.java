@@ -1,5 +1,6 @@
 package com.example.android.wifirttscan.compatibility;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -7,30 +8,20 @@ import androidx.room.PrimaryKey;
 @Entity
 public class ApEntity {
     @PrimaryKey
-    @ColumnInfo (name = "Compatibility")
-    public boolean mComp;
-
-    @ColumnInfo (name = "SSID")
-    public String SSID;
+    @NonNull
+    @ColumnInfo (name = "BSSID")
+    public String BSSID;
 
     public ApEntity(){
 
     }
 
-    public String getSSID() {
-        return SSID;
+    public String getBSSID() {
+        return BSSID;
     }
 
-    public void setSsid(String ssid){
-        this.SSID=ssid;
-    }
-
-    public boolean getmComp(){
-        return mComp;
-    }
-
-    public void setmComp(boolean comp){
-        this.mComp=comp;
+    public void setSsid(String bssid){
+        this.BSSID=bssid;
     }
 
 }

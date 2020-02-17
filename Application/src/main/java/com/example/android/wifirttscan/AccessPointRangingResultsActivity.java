@@ -407,10 +407,11 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
                         //DATABASE PROCEDURE
                         //Adding the new AP to the DataBase
-                        ApEntity newAP = new ApEntity();
-                        newAP.setSsid(mMAC);
-                        newAP.setmComp(true);
-                        DataBase.getDataBase(getApplication()).apDao().insertAP(newAP);
+                        if(DataBase.getDataBase(getApplication()).apDao().findBySSID(mMAC)==null) {
+                            ApEntity newAP = new ApEntity();
+                            newAP.setSsid(mMAC);
+                            DataBase.getDataBase(getApplication()).apDao().insertAP(newAP);
+                        }
                         //FINISH OF THE DATABASE PROCEDURE
 
                         //Update its proved compatibility attribute

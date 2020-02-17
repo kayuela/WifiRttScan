@@ -13,8 +13,8 @@ public interface ApDao {
     @Query("SELECT * FROM ApEntity")
     LiveData<List<ApEntity>> getAll();
 
-    @Query("SELECT * FROM ApEntity WHERE SSID LIKE :SSID LIMIT 1")
-    ApEntity findBySSID(String SSID);
+    @Query("SELECT * FROM ApEntity WHERE BSSID LIKE :BSSID LIMIT 1")
+    ApEntity findBySSID(String BSSID);
 
     @Insert
     void insertAP(ApEntity apEntity);
