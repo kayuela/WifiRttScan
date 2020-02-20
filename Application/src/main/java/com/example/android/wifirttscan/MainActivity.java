@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
 
                     mAdapter.swapData(mAccessPointsSupporting80211mc);
 
-                    long numCapable = mAccessPointsSupporting80211mc.stream().filter(ScanResultComp::is80211mcResponderAnnounced).count();
+                    long numCapable = mAccessPointsSupporting80211mc.stream().filter(ScanResultComp::is80211mcResponder).count();
 
                     logToUi(
                             scanResults.size()
