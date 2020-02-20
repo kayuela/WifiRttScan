@@ -15,8 +15,6 @@
  */
 package com.example.android.wifirttscan;
 
-import static com.example.android.wifirttscan.AccessPointRangingResultsActivity.SCAN_RESULT_EXTRA;
-
 import android.Manifest.permission;
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
@@ -27,22 +25,24 @@ import android.content.pm.PackageManager;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.LayoutManager;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.LayoutManager;
 
 import com.example.android.wifirttscan.MyAdapter.ScanResultClickListener;
 import com.example.android.wifirttscan.data.DataBase;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.android.wifirttscan.AccessPointRangingResultsActivity.SCAN_RESULT_EXTRA;
 
 /**
  * Displays list of Access Points enabled with WifiRTT (to check distance). Requests location
@@ -102,6 +102,8 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
 
         registerReceiver(
                 mWifiScanReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+
+        mAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -141,8 +143,7 @@ public class MainActivity extends AppCompatActivity implements ScanResultClickLi
 
     private class WifiScanReceiver extends BroadcastReceiver {
 
-        private List<ScanResultComp> find80211mcSupportedAccessPoints(
-                @NonNull List<ScanResult> originalList) {
+        private List<ScanResultComp> find80211mcSupportedAccessPoints(@NonNull List<ScanResult> originalList) {
             List<ScanResultComp> newList = new ArrayList<>();
 
             for (ScanResult scanResult : originalList) {

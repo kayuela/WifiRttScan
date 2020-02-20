@@ -4,13 +4,29 @@ import android.net.wifi.ScanResult;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.lang.reflect.Field;
+
 class ScanResultComp implements Parcelable {
+    private static final long FLAG_80211mc_RESPONDER = 0x0000000000000002;
     private ScanResult mScanResult;
-    private boolean mIs80211mcResponder;
+    private boolean mIs80211mcResponderAnnounced;
+    private boolean mIs80211mcResponderTested;
 
     public ScanResultComp(ScanResult scanResult) {
-        this.mScanResult = scanResult;
-        this.mIs80211mcResponder = false;
+        mScanResult = scanResult;
+        is80211mcResponderAnnounced(scanResult.is80211mcResponder());
+        is80211mcResponder(false);
+
+        // Forcing ScanResult to act as RTT responder
+        try {
+            Field f = scanResult.getClass().getDeclaredField("flags");
+            f.setAccessible(true);
+            f.setLong(scanResult,f.getLong(scanResult) | ScanResultComp.FLAG_80211mc_RESPONDER);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 
     protected ScanResultComp(Parcel in) {
@@ -44,15 +60,18 @@ class ScanResultComp implements Parcelable {
     }
 
     /* Métodos utilizados para comprobar si se anuncia y si realmente son compatibles con 802.11mc */
-    public boolean is80211mcResponder() { return is80211mcResponderAnnounced() || mIs80211mcResponder; }
+    public boolean is80211mcResponder() { return mIs80211mcResponderTested || is80211mcResponderAnnounced(); }
 
     /*setter*/
     public void is80211mcResponder(boolean isResponder){
-        mIs80211mcResponder=isResponder;
+        mIs80211mcResponderTested =isResponder;
     }
 
     public boolean is80211mcResponderAnnounced() {
-        return mScanResult.is80211mcResponder();
+        return mIs80211mcResponderAnnounced;
+    }
+    public void is80211mcResponderAnnounced(boolean is80211mcResponderAnnounced) {
+        this.mIs80211mcResponderAnnounced = is80211mcResponderAnnounced;
     }
 
     @Override
