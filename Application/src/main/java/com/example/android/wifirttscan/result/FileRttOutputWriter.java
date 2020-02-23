@@ -50,7 +50,7 @@ public class FileRttOutputWriter implements RttOutputWriter {
     public void writeSample(SampleResult result) {
         final RangingResult rangingResult = result.getRangingResult();
 
-        mFowSamples.printf("%s\t%d\t%f\t%f\t%f\t%d\t%f\t%d\t%d\n",
+        mFowSamples.printf("%s,%d,%f,%f,%f,%d,%f,%d,%d\n",
                 rangingResult.getMacAddress().toString(),
                 mNumBatch,
                 mActualDistance,
@@ -68,7 +68,7 @@ public class FileRttOutputWriter implements RttOutputWriter {
     @Override
     public void writeBatch(BatchResult result) {
 
-        mFowBatches.printf("%d\t%d\t%d\n",
+        mFowBatches.printf("%d,%d,%d\n",
                 mNumBatch,
                 result.getSuccessfulSamples(),
                 result.getAttemptedSamples()
