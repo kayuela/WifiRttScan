@@ -10,7 +10,7 @@ public interface RttOutputWriter {
 
     default void init() {}
     void writeSample(SampleResult result) throws IOException;
-    void writeBatch(BatchResult result) throws IOException;
+    void writeBatch(BatchResult result, RangingResult rangingResult) throws IOException;
     default void end() {}
     void finish() throws IOException;
 

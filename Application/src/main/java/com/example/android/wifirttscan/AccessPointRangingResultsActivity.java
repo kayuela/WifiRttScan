@@ -390,13 +390,14 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         public void onRangingResults(@NonNull List<RangingResult> list) {
             Log.d(TAG, "onRangingResults(): " + list);
             mEstimationFinalTime=date.getTime();
-
+            RangingResult auxiliarRangingResult=null;
             // Because we are only requesting RangingResult for one access point (not multiple
             // access points), this will only ever be one. (Use loops when requesting RangingResults
             // for multiple access points.)
             if (list.size() == 1) {
 
                 RangingResult rangingResult = list.get(0);
+                auxiliarRangingResult = rangingResult;
                 if (mMAC.equals(rangingResult.getMacAddress().toString())) {
                     synchronized (state) {
                         if (state != State.RUNNING) return;
@@ -458,7 +459,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
             }
 
             if (mNumberOfSuccessfulRangeRequests == mSampleSize) {
-                fileOutputWriter.writeBatch(BatchResult.from(mNumberOfSuccessfulRangeRequests, mNumberOfRangeRequests));
+                fileOutputWriter.writeBatch(BatchResult.from(mNumberOfSuccessfulRangeRequests, mNumberOfRangeRequests),auxiliarRangingResult);
 
                 if (mCurrentBatch < mBatchSize) {
                     // Reset data for the next batch
