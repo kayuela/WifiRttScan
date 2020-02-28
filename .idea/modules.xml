@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Application/Application.iml" filepath="$PROJECT_DIR$/Application/Application.iml" />
-      <module fileurl="file://$PROJECT_DIR$/WifiRttScan.iml" filepath="$PROJECT_DIR$/WifiRttScan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Application/Application.iml" filepath="$PROJECT_DIR$/Application/Application.iml" group="WifiRttScan/Application" />
+      <module fileurl="file://$PROJECT_DIR$/WifiRttScan.iml" filepath="$PROJECT_DIR$/WifiRttScan.iml" group="WifiRttScan" />
     </modules>
   </component>
 </project>

@@ -26,10 +26,6 @@ import android.net.wifi.rtt.RangingResultCallback;
 import android.net.wifi.rtt.WifiRttManager;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -40,8 +36,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.android.wifirttscan.data.ApEntity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import com.example.android.wifirttscan.data.DataBase;
+import com.example.android.wifirttscan.data.dao.ApDao;
+import com.example.android.wifirttscan.data.entity.ApEntity;
 import com.example.android.wifirttscan.result.BatchResult;
 import com.example.android.wifirttscan.result.FileRttOutputWriter;
 import com.example.android.wifirttscan.result.SampleResult;
@@ -124,18 +125,21 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     private double mEstimationTime=0;
     private double mEstimationInitialTime=0;
     private double mEstimationFinalTime=0;
-    private Date date;
+    private Date mDate;
 
     // State
-    private State state;
-    private boolean checkedAtDatabase;
+    private State mState;
+    ApDao mApDao;
+    boolean mCheckedAtDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_access_point_ranging_results);
 
-        state = State.STOPPED;
+        mState = State.STOPPED;
+        mApDao = DataBase.getDataBase(getApplication()).apDao();
+        mCheckedAtDatabase = false;
 
         //Add back button
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -188,14 +192,13 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         }
 
         mMAC = mScanResultComp.getBSSID();
-        checkedAtDatabase = mScanResultComp.is80211mcResponder();
 
         mSsidTextView.setText(mScanResultComp.getSSID());
         mBssidTextView.setText(mScanResultComp.getBSSID());
 
         mWifiRttManager = (WifiRttManager) getSystemService(Context.WIFI_RTT_RANGING_SERVICE);
         mRttRangingResultCallback = new RttRangingResultCallback();
-        date = new Date();
+        mDate = new Date();
 
         resetData();
     }
@@ -268,8 +271,8 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         // to this class unless you already have permission. If they get to this class, then disable
         // fine location permission, we kick them back to main activity.
 
-        synchronized (state) {
-            if (state != State.RUNNING) return;
+        synchronized (mState) {
+            if (mState != State.RUNNING) return;
         }
 
         if (ActivityCompat.checkSelfPermission(this, permission.ACCESS_FINE_LOCATION)
@@ -279,7 +282,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
         mNumberOfRangeRequests++;
         //fileOutputWriter.init();
-        mEstimationInitialTime=date.getTime();
+        mEstimationInitialTime= mDate.getTime();
 
         RangingRequest rangingRequest =
                 new RangingRequest.Builder().addAccessPoint(mScanResultComp.getScanResult()).build();
@@ -303,9 +306,9 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
 
 
     public void onAbortButtonClick(View view) {
-        synchronized (state) {
-            if (state == State.STOPPED) return;
-            state = State.STOPPED;
+        synchronized (mState) {
+            if (mState == State.STOPPED) return;
+            mState = State.STOPPED;
         }
 
         mRttRangingResultCallback.abort();
@@ -315,9 +318,9 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
     }
 
     public void onStartButtonClick(View view) {
-        synchronized (state) {
-            if (state == State.RUNNING) return;
-            state = State.RUNNING;
+        synchronized (mState) {
+            if (mState == State.RUNNING) return;
+            mState = State.RUNNING;
         }
         resetData();
         refreshValues();
@@ -389,7 +392,7 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
         @Override
         public void onRangingResults(@NonNull List<RangingResult> list) {
             Log.d(TAG, "onRangingResults(): " + list);
-            mEstimationFinalTime=date.getTime();
+            mEstimationFinalTime= mDate.getTime();
             RangingResult auxiliarRangingResult=null;
             // Because we are only requesting RangingResult for one access point (not multiple
             // access points), this will only ever be one. (Use loops when requesting RangingResults
@@ -399,20 +402,22 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                 RangingResult rangingResult = list.get(0);
                 auxiliarRangingResult = rangingResult;
                 if (mMAC.equals(rangingResult.getMacAddress().toString())) {
-                    synchronized (state) {
-                        if (state != State.RUNNING) return;
+                    synchronized (mState) {
+                        if (mState != State.RUNNING) return;
                     }
 
                     if (rangingResult.getStatus() == RangingResult.STATUS_SUCCESS) {
 
                         //DATABASE PROCEDURE
                         //Adding the new AP to the DataBase
-                        if(!checkedAtDatabase && !mScanResultComp.is80211mcResponder()) {
-                            ApEntity newAP = new ApEntity();
-                            newAP.setSsid(mMAC);
-                            DataBase.getDataBase(getApplication()).apDao().insertAP(newAP);
+                        if(!mCheckedAtDatabase && !mScanResultComp.is80211mcResponderAnnounced()) {
+                            if (mApDao.findByBSSID(mScanResultComp.getBSSID()) == null) {
+                                ApEntity newAP = new ApEntity();
+                                newAP.setSsid(mMAC);
+                                mApDao.insertAP(newAP);
+                            }
                             mScanResultComp.is80211mcResponder(true);
-                            checkedAtDatabase = true;
+                            mCheckedAtDatabase = true;
                         }
                         //FINISH OF THE DATABASE PROCEDURE
 
@@ -479,6 +484,9 @@ public class AccessPointRangingResultsActivity extends AppCompatActivity {
                 }
                 else {
                     fileOutputWriter.finish();
+                    synchronized (mState) {
+                        mState = State.STOPPED;
+                    }
                     setStartButtonEnabled(true);
                     Toast.makeText(AccessPointRangingResultsActivity.this, R.string.inform_rtt_process_ended_successfully, Toast.LENGTH_SHORT).show();
                 }

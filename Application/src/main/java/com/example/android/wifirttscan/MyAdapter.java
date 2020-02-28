@@ -16,14 +16,15 @@
 package com.example.android.wifirttscan;
 
 import android.net.wifi.ScanResult;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.ViewHolder;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
         private TextView mBssidTextView;
         private TextView mFrequencyBandTextView;
         private CheckBox mIsAnnouncedCheckBox;
-        private CheckBox mHasBeenCheckedCheckBox;
+        private CheckBox mHasBeenTestedCheckBox;
 
 
         public ViewHolderItem(View view) {
@@ -67,7 +68,7 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
             mBssidTextView = view.findViewById(R.id.bssid_text_view);
             mFrequencyBandTextView = view.findViewById(R.id.frequency_band_text_view);
             mIsAnnouncedCheckBox = view.findViewById(R.id.is_announced);
-            mHasBeenCheckedCheckBox = view.findViewById(R.id.has_been_tested);
+            mHasBeenTestedCheckBox = view.findViewById(R.id.has_been_tested);
         }
 
         @Override
@@ -119,14 +120,15 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
 
         } else if (viewHolder instanceof ViewHolderItem) {
             ViewHolderItem viewHolderItem = (ViewHolderItem) viewHolder;
-            ScanResultComp currentScanResult = getItem(position);
+            ScanResultComp scanResultComp = getItem(position);
 
-            final String ssid = currentScanResult.getSSID();
+            final String ssid = scanResultComp.getSSID();
             viewHolderItem.mSsidTextView.setText(ssid == null || ssid.isEmpty() ? ((ViewHolderItem) viewHolder).mSsidTextView.getContext().getString(R.string.ssid_hidden) : ssid);
-            viewHolderItem.mBssidTextView.setText(currentScanResult.getBSSID());
-            viewHolderItem.mFrequencyBandTextView.setText(currentScanResult.getFrequencyBand());
-            viewHolderItem.mIsAnnouncedCheckBox.setChecked(currentScanResult.is80211mcResponderAnnounced());
-            viewHolderItem.mHasBeenCheckedCheckBox.setChecked(currentScanResult.is80211mcResponder());
+            viewHolderItem.mBssidTextView.setText(scanResultComp.getBSSID());
+            viewHolderItem.mFrequencyBandTextView.setText(scanResultComp.getFrequencyBand());
+            viewHolderItem.mIsAnnouncedCheckBox.setChecked(scanResultComp.is80211mcResponderAnnounced());
+            viewHolderItem.mHasBeenTestedCheckBox.setChecked(scanResultComp.is80211mcResponder());
+            Log.d("Adapter", ((ViewHolderItem) viewHolder).mSsidTextView.getText() + " Tested: " + scanResultComp.is80211mcResponder());
 
         } else {
             throw new RuntimeException(viewHolder + " isn't a valid view holder.");

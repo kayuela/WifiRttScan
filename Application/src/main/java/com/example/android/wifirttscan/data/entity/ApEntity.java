@@ -1,4 +1,4 @@
-package com.example.android.wifirttscan.data;
+package com.example.android.wifirttscan.data.entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
