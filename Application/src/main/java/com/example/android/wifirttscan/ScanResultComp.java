@@ -6,6 +6,12 @@ import android.os.Parcelable;
 
 import java.lang.reflect.Field;
 
+import static android.net.wifi.ScanResult.CHANNEL_WIDTH_160MHZ;
+import static android.net.wifi.ScanResult.CHANNEL_WIDTH_20MHZ;
+import static android.net.wifi.ScanResult.CHANNEL_WIDTH_40MHZ;
+import static android.net.wifi.ScanResult.CHANNEL_WIDTH_80MHZ;
+import static android.net.wifi.ScanResult.CHANNEL_WIDTH_80MHZ_PLUS_MHZ;
+
 class ScanResultComp implements Parcelable {
     private static final long FLAG_80211mc_RESPONDER = 0x0000000000000002;
     private ScanResult mScanResult;
@@ -53,7 +59,24 @@ class ScanResultComp implements Parcelable {
         return mScanResult.BSSID;
     }
 
-    public String getFrequencyBand() { return String.valueOf(mScanResult.frequency + " MHz"); };
+    public String getFrequencyBand() { return mScanResult.frequency + " MHz"; };
+
+    public String getChannelBandWidth() {
+        switch (mScanResult.channelWidth) {
+            case CHANNEL_WIDTH_20MHZ:
+                return "20 MHz";
+            case CHANNEL_WIDTH_40MHZ:
+                return "40 MHz";
+            case CHANNEL_WIDTH_80MHZ:
+                return "80 MHz";
+            case CHANNEL_WIDTH_80MHZ_PLUS_MHZ:
+                return "80+ MHz";
+            case CHANNEL_WIDTH_160MHZ:
+                return "160 MHz";
+            default:
+                return "0 MHz";
+        }
+    };
 
     public ScanResult getScanResult() {
         return mScanResult;

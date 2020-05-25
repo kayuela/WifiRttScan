@@ -4,7 +4,6 @@ import android.content.Context;
 import android.net.wifi.rtt.RangingResult;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;

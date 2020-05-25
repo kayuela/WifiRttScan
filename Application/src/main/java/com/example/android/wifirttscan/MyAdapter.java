@@ -125,7 +125,7 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder> {
             final String ssid = scanResultComp.getSSID();
             viewHolderItem.mSsidTextView.setText(ssid == null || ssid.isEmpty() ? ((ViewHolderItem) viewHolder).mSsidTextView.getContext().getString(R.string.ssid_hidden) : ssid);
             viewHolderItem.mBssidTextView.setText(scanResultComp.getBSSID());
-            viewHolderItem.mFrequencyBandTextView.setText(scanResultComp.getFrequencyBand());
+            viewHolderItem.mFrequencyBandTextView.setText(scanResultComp.getFrequencyBand() + "(" + scanResultComp.getChannelBandWidth() + ")");
             viewHolderItem.mIsAnnouncedCheckBox.setChecked(scanResultComp.is80211mcResponderAnnounced());
             viewHolderItem.mHasBeenTestedCheckBox.setChecked(scanResultComp.is80211mcResponder());
             Log.d("Adapter", ((ViewHolderItem) viewHolder).mSsidTextView.getText() + " Tested: " + scanResultComp.is80211mcResponder());
